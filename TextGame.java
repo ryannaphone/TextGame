@@ -23,6 +23,7 @@ public class TextGame {
 	static boolean foundYellowDoor = false;
 	static boolean foundCavePortal = false;
 	static boolean restUnlocked = false;
+	static boolean thirdEyeOpen = false;
 	static boolean malice = false;
 	static boolean pride = false;
 	static boolean woe = false;
@@ -350,8 +351,8 @@ public class TextGame {
 				+ "\n ... the office?", allOpts[28]);
 
 		allOpts[29] = new Option[2];
-		allOpts[29][0] = new Option("Keep running.", 1, 100);
-		allOpts[29][1] = new Option("Find somewhere to hide.", 2, 100);
+		allOpts[29][0] = new Option("Keep running.", 1, 44);
+		allOpts[29][1] = new Option("Find somewhere to hide.", 2, 42);
 		
 		e[29] = new GameEvent("The thundering sound behind you is growing closer.", allOpts[29]);
 
@@ -418,7 +419,7 @@ public class TextGame {
 				+ "\n you are pressed through the floor and sink to the bottom of a vast ocean.", allOpts[39]);
 		
 		allOpts[40] = new Option[2];
-		allOpts[40][0] = new Option("Swim up.", 1, 100);
+		allOpts[40][0] = new Option("Swim up.", 1, 96);
 		allOpts[40][1] = new Option("Swim down.", 2, 91);
 		
 		e[40] = new GameEvent("You feel yourself regaining your old form. "
@@ -428,6 +429,29 @@ public class TextGame {
 		allOpts[41][0] = new Option("Go to Dr. Schilling's office.", 1, 21);
 		allOpts[41][1] = new Option("RUN.", 2, 3);
 		
+		e[41] = new GameEvent("'Come with me to my office please.'", allOpts[41]);
+		
+		allOpts[42] = new Option[2];
+		allOpts[42][0] = new Option("Hide in the porta-potty.", 1, 43);
+		allOpts[42][1] = new Option("Keep running.", 2, 44);
+		
+		e[42] = new GameEvent("You scan your surroundings for somewhere to hide."
+				+ "\n The only thing close enough is a bright blue porta-potty.", allOpts[42]);
+		
+		allOpts[43] = new Option[2];
+		allOpts[43][0] = new Option("Take your seat.", 1, 70);
+		allOpts[43][1] = new Option("Find another way.", 2, 44);
+		
+		e[43] = new GameEvent("As you approach the porta-potty, it begins to tremble."
+				+ "\n The door swings open... 'Ah, just in time!' "
+				+ "\n It's... your history class?", allOpts[43]);
+		
+		
+		allOpts[44] = new Option[1];
+		allOpts[44][0] = new Option("'Jeez.'", 1, 11);
+		
+		e[44] = new GameEvent("The sounds behind you become overwhelmingly loud."
+				+ "\n You are knocked down by a tremendous force.", allOpts[44]);
 		
 		allOpts[50] = new Option[4];
 		allOpts[50][0] = new Option("Woe and despair.", 1, 54);
@@ -754,7 +778,7 @@ public class TextGame {
 		e[171] = new GameEvent("You stand in a clearing of a small hill.", allOpts[171]);
 		
 		allOpts[172] = new Option[3];
-		allOpts[172][0] = new Option("Walk toward the corn.", 1, 100);
+		allOpts[172][0] = new Option("Walk toward the corn.", 1, 180);
 		allOpts[172][1] = new Option("Walk away from the corn.", 2, 100);
 		allOpts[172][2] = new Option("Call for help.", 3, 173);
 		
@@ -770,7 +794,7 @@ public class TextGame {
 				+ "\n Birds scatter from the trees.", allOpts[173]);
 		
 		allOpts[174] = new Option[2];
-		allOpts[174][0] = new Option("Uphill.", 1, 100);
+		allOpts[174][0] = new Option("Uphill.", 1, 180);
 		allOpts[174][1] = new Option("Downhill.", 2, 100);
 		
 		e[174] = new GameEvent("Which way will you walk?", allOpts[174]);
@@ -781,10 +805,10 @@ public class TextGame {
 		
 		e[175] = new GameEvent("The ground trembles with the rythmic pounding of hooves. "
 				+ "\n Before you can react, you are surrounded."
-				+ "\n 'waaphkilookia, keetwi iišileniyani?'");
+				+ "\n 'waaphkilookia, keetwi iišileniyani?'", allOpts[175]);
 		
 		allOpts[176] = new Option[2];
-		allOpts[176][0] = new Option("Nod yes.", 1, 100);
+		allOpts[176][0] = new Option("Nod yes.", 1, 180);
 		allOpts[176][1] = new Option("Shake your head no.", 2, 177);
 		
 		e[176] = new GameEvent("'noonki-nko ayiihkwiyani?"
@@ -816,6 +840,24 @@ public class TextGame {
 		
 		e[181] = new GameEvent("You ask to help, someone points at a spoon and a pot:"
 				+ "\n 'weeyaakahaakani ayoolo, waaphkilookia.'", allOpts[181]);
+		
+		allOpts[182] = new Option[2];
+		allOpts[182][0] = new Option("Run away.", 1, 100);
+		allOpts[182][1] = new Option("Laugh along.", 2, 100);
+		
+		e[182] = new GameEvent("Everyone erupts with laughter as you burn your tongue on the unfinished food.", allOpts[182]);
+		
+		allOpts[183] = new Option[1];
+		allOpts[183][0] = new Option("'iihia.'", 1, 184);
+		
+		e[183] = new GameEvent("You stir the food. "
+				+ "\n 'mihši neewe.'", allOpts[183]);
+		
+		allOpts[184] = new Option[1];
+		allOpts[184][0] = new Option("'maalami aalaankwiaani.'", 1, 11);
+		
+		e[184] = new GameEvent("The rest of your night is spent enjoying good food and laughter."
+				+ "\n Your new friends teach you as much of their language as they can.", allOpts[184]);
 		
 		
 		return e;
@@ -902,7 +944,7 @@ public class TextGame {
 			if (callForHelpCounter > 6) {
 				allEvents[173].options = new Option[3];
 				allEvents[173].options[0] = new Option("Observe your surroundings.", 1, 175);
-				allEvents[173].options[1] = new Option("Start walking.", 2, 176);
+				allEvents[173].options[1] = new Option("Start walking.", 2, 175);
 				allEvents[173].options[2] = new Option("Call again.", 3, 175);
 			}
 			
@@ -955,6 +997,10 @@ public class TextGame {
 			else if (woe) allEvents[152] = new GameEvent("You are in timeline " + randomizer + ", pride variant.", allEvents[152].options);
 			else allEvents[152] = new GameEvent("You are in timeline " + randomizer + ".", allEvents[152].options);
 
+		}
+		
+		if (i == 150) { 
+			thirdEyeOpen = true;
 		}
 		
 		if (i == 115) {
@@ -1089,7 +1135,7 @@ public class TextGame {
 			allEvents[1].options = new Option[3];
 			allEvents[1].options[0] = new Option("Head to your math class.", 1, 2);
 			allEvents[1].options[1] = new Option("RUN", 2, 3);
-			allEvents[1].options[2] = new Option("'Deja Vu'", 3, 100);
+			allEvents[1].options[2] = new Option("'Deja Vu'", 3, 41);
 			
 			
 			
@@ -1113,6 +1159,7 @@ public class TextGame {
 			allEvents[51].options[0] = new Option("Shrug.", 1, 52);
 			allEvents[51].options[1] = new Option("Keep trying.", 2, 11);
 		}
+		
 		
 		if (i == 26) {
 			noIDontCounter++;
@@ -1169,7 +1216,7 @@ public class TextGame {
 			
 			if (restUnlocked)restCounter++;
 			
-			if (restCounter > 5) {
+			if (restCounter > 5 || thirdEyeOpen) {
 				
 				allEvents[94].options = new Option[1];
 				allEvents[94].options[0] = new Option("Close your eyes", 1, 11);
