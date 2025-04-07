@@ -24,6 +24,9 @@ public class TextGame {
 	static boolean foundCavePortal = false;
 	static boolean restUnlocked = false;
 	static boolean thirdEyeOpen = false;
+	
+	static boolean hasPick = false;
+	
 	static boolean malice = false;
 	static boolean pride = false;
 	static boolean woe = false;
@@ -37,6 +40,9 @@ public class TextGame {
 	static int swimToShoreCounter = 0;
 	static int swimDownCounter = 0;
 	static int callForHelpCounter = 0;
+	static int mineTreeCounter = 0;
+	static int mineGroundCounter = 0;
+	
 
 	public static void main(String[] args) { // this method runs when the program starts
 	
@@ -338,13 +344,13 @@ public class TextGame {
 		
 		allOpts[27] = new Option[2];
 		allOpts[27][0] = new Option("Try the door.", 1, 28);
-		allOpts[27][1] = new Option("Try the other direction.", 2, 100);
+		allOpts[27][1] = new Option("Try the other direction.", 2, 29);
 		
 		e[27] = new GameEvent("You pass by a house with a vibrant green door. It calls to you.", allOpts[27]);
 		
 		allOpts[28] = new Option[2];
 		allOpts[28][0] = new Option("Enter the office.", 1, 20);
-		allOpts[28][1] = new Option("Try the other direction.", 2, 100);
+		allOpts[28][1] = new Option("Try the other direction.", 2, 29);
 		
 		e[28] = new GameEvent("The green door swings open as you step on to the sidewalk. "
 				+ "\n A dim yellow light spills out. As you approach you can see..."
@@ -453,6 +459,11 @@ public class TextGame {
 		e[44] = new GameEvent("The sounds behind you become overwhelmingly loud."
 				+ "\n You are knocked down by a tremendous force.", allOpts[44]);
 		
+		allOpts[45] = new Option[1];
+		allOpts[45][0] = new Option("Begin class.", 1, 70);
+		
+		e[45] = new GameEvent("You find yourself in history class, a little confused.", allOpts[45]);
+		
 		allOpts[50] = new Option[4];
 		allOpts[50][0] = new Option("Woe and despair.", 1, 54);
 		allOpts[50][1] = new Option("Malice and rage.", 2, 55);
@@ -505,7 +516,7 @@ public class TextGame {
 		
 		allOpts[60] = new Option[2];
 		allOpts[60][0] = new Option("Take your seat.", 1, 61);
-		allOpts[60][1] = new Option("'This is too much.'", 2, 100);
+		allOpts[60][1] = new Option("'This is too much.'", 2, 11);
 		
 		e[60] = new GameEvent("You rush to the door and with some effort, it swings open. "
 				+ "\n Inside you see... "
@@ -535,12 +546,121 @@ public class TextGame {
 				+ "\n 'Please make your way to the 3rd floor for the award ceremony.'", allOpts[63]);
 
 		allOpts[64] = new Option[2];
-		allOpts[64][0] = new Option("Wait for your next class.", 1, 100);
-		allOpts[64][1] = new Option("Time for a bathroom break.", 2, 100);
+		allOpts[64][0] = new Option("Wait for your next class.", 1, 45);
+		allOpts[64][1] = new Option("Time for a bathroom break.", 2, 65);
 		
 		e[64] = new GameEvent("'Good enough, I guess.'", allOpts[64]);
 		
+		allOpts[65] = new Option[4];
+		allOpts[65][0] = new Option("First stall.", 1, 66);
+		allOpts[65][1] = new Option("Second stall.", 2, 67);
+		allOpts[65][2] = new Option("Third stall.", 3, 100);
 		
+		e[65] = new GameEvent("In the bathroom, there are three stalls before you. Which stall will you choose?", allOpts[65]);
+		
+		if (randomizer == 0) {
+		
+			allOpts[66] = new Option[2];
+			allOpts[66][0] = new Option("Enter the stall.", 1, 91);
+			allOpts[66][1] = new Option("Choose another stall.", 2, 65);
+			e[66] = new GameEvent("Water pours out as you open the stall. Inside you see a vast ocean.", allOpts[66]);
+			
+			allOpts[67] = new Option[2];
+			allOpts[67][0] = new Option("Enter the stall.", 1, 171);
+			allOpts[67][1] = new Option("Choose another stall.", 2, 65);
+			e[67] = new GameEvent("You see a vast expanse of woods. The bathroom grows humid.", allOpts[67]);
+			
+			allOpts[68] = new Option[2];
+			allOpts[68][0] = new Option("Enter the stall.", 1, 130);
+			allOpts[68][1] = new Option("Choose another stall.", 2, 65);
+			e[68] = new GameEvent("You see a dark maze. Sounds echo for eons.", allOpts[68]);
+				
+		} else if (randomizer == 1 || randomizer == 2) {
+			allOpts[66] = new Option[2];
+			allOpts[66][0] = new Option("Enter the stall.", 1, 69);
+			allOpts[66][1] = new Option("Choose another stall.", 2, 65);
+			e[66] = new GameEvent("It looks like a regular bathroom stall.", allOpts[66]);
+			
+			allOpts[67] = new Option[2];
+			allOpts[67][0] = new Option("Enter the stall.", 1, 6);
+			allOpts[67][1] = new Option("Choose another stall.", 2, 65);
+			
+			e[67] = new GameEvent("You see a highway stretching into the distance. Cars zoom by.", allOpts[67]);
+			
+			allOpts[68] = new Option[2];
+			allOpts[68][0] = new Option("Enter the stall.", 1, 171);
+			allOpts[68][1] = new Option("Choose another stall.", 2, 65);
+			e[68] = new GameEvent("You see a vast expanse of woods. The bathroom grows humid.", allOpts[68]);
+		} else if (randomizer == 3 || randomizer == 4) {
+			allOpts[66] = new Option[2];
+			allOpts[66][0] = new Option("Enter the stall.", 1, 69);
+			allOpts[66][1] = new Option("Choose another stall.", 2, 65);
+			e[66] = new GameEvent("It looks like a regular bathroom stall.", allOpts[66]);
+			
+			allOpts[67] = new Option[2];
+			allOpts[67][0] = new Option("Enter the stall.", 1, 6);
+			allOpts[67][1] = new Option("Choose another stall.", 2, 65);
+			
+			e[67] = new GameEvent("You see a highway stretching into the distance. Cars zoom by.", allOpts[67]);
+			
+			allOpts[68] = new Option[2];
+			allOpts[68][0] = new Option("Enter the stall.", 1, 130);
+			allOpts[68][1] = new Option("Choose another stall.", 2, 65);
+			e[68] = new GameEvent("You see a dark maze. Sounds echo for eons.", allOpts[68]);
+		} else if (randomizer == 5 || randomizer == 6) {
+			allOpts[66] = new Option[2];
+			allOpts[66][0] = new Option("Enter the stall.", 1, 69);
+			allOpts[66][1] = new Option("Choose another stall.", 2, 65);
+			e[66] = new GameEvent("It looks like a regular bathroom stall.", allOpts[66]);
+			
+			allOpts[67] = new Option[2];
+			allOpts[67][0] = new Option("Enter the stall.", 1, 6);
+			allOpts[67][1] = new Option("Choose another stall.", 2, 65);
+			
+			e[67] = new GameEvent("You see a highway stretching into the distance. Cars zoom by.", allOpts[67]);
+			
+			allOpts[68] = new Option[2];
+			allOpts[68][0] = new Option("Enter the stall.", 1, 69);
+			allOpts[68][1] = new Option("Choose another stall.", 2, 65);
+			e[68] = new GameEvent("It looks like a regular bathroom stall.", allOpts[68]);
+		} else if (randomizer == 7 || randomizer == 8) { 
+			allOpts[66] = new Option[2];
+			allOpts[66][0] = new Option("Enter the stall.", 1, 69);
+			allOpts[66][1] = new Option("Choose another stall.", 2, 65);
+			e[66] = new GameEvent("It looks like a regular bathroom stall.", allOpts[66]);
+			
+			allOpts[67] = new Option[2];
+			allOpts[67][0] = new Option("Enter the stall.", 1, 69);
+			allOpts[67][1] = new Option("Choose another stall.", 2, 65);
+			e[67] = new GameEvent("It looks like a regular bathroom stall.", allOpts[67]);
+			
+			allOpts[68] = new Option[2];
+			allOpts[68][0] = new Option("Enter the stall.", 1, 69);
+			allOpts[68][1] = new Option("Choose another stall.", 2, 65);
+			e[68] = new GameEvent("It looks like a regular bathroom stall.", allOpts[68]);
+		} else if (randomizer == 9) {
+			allOpts[66] = new Option[2];
+			allOpts[66][0] = new Option("Enter the stall.", 1, 69);
+			allOpts[66][1] = new Option("Choose another stall.", 2, 65);
+			e[66] = new GameEvent("It looks like a regular bathroom stall.", allOpts[66]);
+			
+			allOpts[67] = new Option[2];
+			allOpts[67][0] = new Option("Enter the stall.", 1, 6);
+			allOpts[67][1] = new Option("Choose another stall.", 2, 65);
+			
+			e[67] = new GameEvent("You see a highway stretching into the distance. Cars zoom by.", allOpts[67]);
+			
+			allOpts[68] = new Option[2];
+			allOpts[68][0] = new Option("Enter the stall.", 1, 130);
+			allOpts[68][1] = new Option("Choose another stall.", 2, 65);
+			
+			e[68] = new GameEvent("You see a dark maze. Sounds echo for eons.", allOpts[68]);
+		}
+		
+		allOpts[69] = new Option[1];
+		allOpts[69][0] = new Option("'Awesome.'", 1, 65);
+		
+		e[69] = new GameEvent("You poop.", allOpts[69]);
 		
 		allOpts[70] = new Option[4];
 		allOpts[70][0] = new Option("1066 AD", 1, 72);
@@ -548,7 +668,7 @@ public class TextGame {
 		allOpts[70][2] = new Option("1945 AD", 3, 71);
 		allOpts[70][3] = new Option("1444 AD", 4, 71);
 		
-		e[70] = new GameEvent("What year did William the Conquerer invade England?", allOpts[70]);
+		e[70] = new GameEvent("What year was the battle of Hastings?", allOpts[70]);
 
 		allOpts[71] = new Option[4];
 		allOpts[71][0] = new Option("1066 AD", 1, 73);
@@ -559,8 +679,8 @@ public class TextGame {
 		e[71] = new GameEvent("'I don't think that's right. Give it another try.'", allOpts[71]);
 
 		allOpts[72] = new Option[2];
-		allOpts[72][0] = new Option("Kowtow.", 1, 100);
-		allOpts[72][1] = new Option("Make your escape.", 2, 100);
+		allOpts[72][0] = new Option("Kowtow.", 1, 76);
+		allOpts[72][1] = new Option("Make your escape.", 2, 75);
 		
 		e[72] = new GameEvent("You hear the call of a bugle, followed by a drum roll. "
 				+ "\n 'Clear the way for his excellency, President of the Highschool, and teacher of history:"
@@ -568,11 +688,46 @@ public class TextGame {
 
 		allOpts[73] = new Option[2];
 		allOpts[73][0] = new Option("'I would say so.'", 1, 170);
-		allOpts[73][1] = new Option("'Nah, I just guessed.'", 2, 100);
+		allOpts[73][1] = new Option("'Nah, I just guessed.'", 2, 74);
 		
 		e[73] = new GameEvent("'So you think you know a lot about history, huh?'", allOpts[73]);
 		
+		allOpts[74] = new Option[1];
+		allOpts[74][0] = new Option("Head to lunch.",  1, 120);
 		
+		e[74] = new GameEvent("The halls begin to buzz with the sound of students. "
+				+ "\n 'Seems it is time for lunch.", allOpts[74]);
+		
+		allOpts[75] = new Option[1];
+		allOpts[75][0] = new Option("Swim up.", 1, 91);
+		
+		e[75] = new GameEvent("You run to the door of the classroom and throw it open."
+				+ "\n Water rushes through as you are pulled into the ocean outside.", allOpts[75]);
+		
+		allOpts[76] = new Option[3];
+		allOpts[76][0] = new Option("'Just give me a good grade.'", 1, 100);
+		allOpts[76][1] = new Option("'I would like land and a title.'", 2, 100);
+		allOpts[76][2] = new Option("'Show me history.'", 3, 77);
+		
+		e[76] = new GameEvent("'Rise young one. You may request a boon.'", allOpts[76]);
+		
+		allOpts[77] = new Option[1];
+		allOpts[77][0] = new Option("Close your eyes.", 1, 78);
+		
+		e[77] = new GameEvent("'Very well, close your eyes.'", allOpts[77]);
+		
+		allOpts[78] = new Option[1];
+		allOpts[78][0] = new Option("Open your eyes.", 1, 171);
+		
+		e[78] = new GameEvent("The sound of the classroom fades. "
+				+ "\n You begin to hear wind, and bugs.", allOpts[78]);
+		
+		allOpts[79] = new Option[1];
+		allOpts[79][0] = new Option("Head to lunch.", 1, 120);
+		
+		e[79] = new GameEvent("'Very well, you have earned an A.' "
+				+ "\n The halls begin to buzz with the sound of students."
+				+ "\n 'Seems it is time for lunch.'", allOpts[79]);
 		
 		allOpts[80] = new Option[2];
 		allOpts[80][0] = new Option("Speak with Dr. Schilling.", 1, 21);
@@ -597,8 +752,15 @@ public class TextGame {
 		
 		e[83] = new GameEvent("You're alone in the office. It is eerily quiet.", allOpts[83]);
 
+		allOpts[84] = new Option[1];
+		allOpts[84][0] = new Option("'It calls to me.'", 1, 85);
 		
+		e[84] = new GameEvent("Dr. Schilling's office is empty, but her computer monitor warms you with its soft glow.", allOpts[84]);
 		
+		allOpts[85] = new Option[1];
+		allOpts[85][0] = new Option("'zzzzt'", 1, 140);
+		
+		e[85] = new GameEvent("The static on the monitor buzzes louder and louder. IT consumes you.", allOpts[85]);
 		
 		allOpts[90] = new Option[2];
 		allOpts[90][0] = new Option("Swim down.", 1, 91);
@@ -727,6 +889,9 @@ public class TextGame {
 		
 		e[115] = new GameEvent("'Good luck.'", allOpts[115]);
 		
+		allOpts[120] = new Option[3];
+		
+		e[120] = new GameEvent("You sit down for lunch. What will you eat?", allOpts[120]);
 		
 		//allOpts[115][0] = new Option("", 1, 100);
 		
@@ -736,6 +901,72 @@ public class TextGame {
 		
 		e[130] = new GameEvent("You sink deep below the school, to a dark maze."
 				+ "\n A roaring sound echoes around the byzantine halls.", allOpts[130]);
+		
+		allOpts[140] = new Option[3];
+		allOpts[140][0] = new Option("Smack a tree.", 1, 141);
+		allOpts[140][1] = new Option("Smack the ground.", 2, 142);
+		allOpts[140][2] = new Option("Walk around.", 3, 100);
+		
+		e[140] = new GameEvent("You find yourself in a forest... made of blocks.", allOpts[140]);
+		
+		allOpts[141] = new Option[3];
+		allOpts[141][0] = new Option("Smack the tree again.", 1, 141);
+		allOpts[141][1] = new Option("Smack the ground.", 2, 142);
+		allOpts[141][2] = new Option("Walk around.", 3, 100);
+		
+		e[141] = new GameEvent("You smack a nearby tree. Your hand hurts slightly.", allOpts[141]);
+		
+		allOpts[142] = new Option[3];
+		allOpts[142][0] = new Option("Smack a tree.", 1, 141);
+		allOpts[142][1] = new Option("Smack the ground again.", 2, 142);
+		allOpts[142][2] = new Option("Walk around.", 3, 100);
+		
+		e[142] = new GameEvent("You smack the ground. Your hand gets a bit dirty.", allOpts[142]);
+		
+		
+		allOpts[143] = new Option[3];
+		allOpts[143][0] = new Option("Craft a crafting table.", 1, 144);
+		allOpts[143][1] = new Option("Smack the ground.", 2, 142);
+		allOpts[143][2] = new Option("Walk around.", 3, 100);
+		
+		e[143] = new GameEvent("The tree breaks with a satisfying pop. You collect a few wood blocks.", allOpts[143]);
+		
+		allOpts[144] = new Option[2];
+		allOpts[144][0] = new Option("A pickaxe.", 1, 145);
+		allOpts[144][1] = new Option("Too many stairs.", 2, 100);
+		
+		e[144] = new GameEvent("You create and place a crafting table. What will you craft?", allOpts[144]);
+		
+		allOpts[145] = new Option[2];
+		allOpts[145][0] = new Option("Mine the ground.", 1, 146);
+		allOpts[145][1] = new Option("Walk around.", 2, 100);
+		
+		e[145] = new GameEvent("You have crafted a pickaxe. What will you do now?", allOpts[145]);
+		
+		allOpts[146] = new Option[2];
+		allOpts[146][0] = new Option("Enter the cavern.", 1, 147);
+		allOpts[146][1] = new Option("Walk around.", 2, 100);
+		
+		e[146] = new GameEvent("The dirt block is destroyed with a satisfying pop. You collect it. "
+				+ "\n Below you can see a dark cavern.", allOpts[146]);
+		
+		allOpts[147] = new Option[1];
+		allOpts[147][0] = new Option("Head toward the light.", 1, 148);
+		
+		e[147] = new GameEvent("You hear many spooky noises around you. "
+				+ "\n Toward one end of the cavern you can see a dim glow.", allOpts[147]);
+		
+		allOpts[148] = new Option[2];
+		allOpts[148][0] = new Option("Look for some ore.", 1, 149);
+		allOpts[148][1] = new Option("Hop in the lava.", 2, 11);
+		
+		e[148] = new GameEvent("After some traversing, you arrive at a vast pool of lava.", allOpts[148]);
+		
+		allOpts[149] = new Option[1];
+		allOpts[149][0] = new Option("'AAAHHHHHH!'", 1, 130);
+		
+		e[149] = new GameEvent("You find some iron, but commit the cardinal sin of mining directly under your feet."
+				+ "\n You fall and fall and fall.", allOpts[149] );
 
 		allOpts[150] = new Option[2];
 		allOpts[150][0] = new Option("'Where am I?'", 1, 100);
@@ -1001,6 +1232,38 @@ public class TextGame {
 		
 		if (i == 150) { 
 			thirdEyeOpen = true;
+		}
+		
+		if (i == 145) {
+			hasPick = true;
+		}
+		
+		if (i == 142) {
+			mineGroundCounter++;
+			if (hasPick) mineGroundCounter++;
+			
+			if (mineGroundCounter > 4) {
+				allEvents[142].options = new Option[3];
+				allEvents[142].options[0] = new Option("Smack a tree.", 1, 141);
+				allEvents[142].options[1] = new Option("Smack the ground again.", 2, 146);
+				allEvents[142].options[2] = new Option("Walk around.", 3, 100);
+				
+				allEvents[142] = new GameEvent("You smack the ground. Your hand gets a bit dirty.", allEvents[142].options);
+			}
+		}
+		
+		if (i == 141) {
+			mineTreeCounter++;
+			if (hasPick) mineTreeCounter++;
+			
+			if (mineTreeCounter > 10) {
+				allEvents[141].options = new Option[3];
+				allEvents[141].options[0] = new Option("Smack the tree again.", 1, 143);
+				allEvents[141].options[1] = new Option("Smack the ground.", 2, 142);
+				allEvents[141].options[2] = new Option("Walk around.", 3, 100);
+				
+				allEvents[141] = new GameEvent("You smack a nearby tree. Your hand hurts slightly.", allEvents[141].options);
+			}
 		}
 		
 		if (i == 115) {
