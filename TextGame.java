@@ -919,6 +919,7 @@ public class TextGame {
 		
 		allOpts[120] = new Option[3];
 		
+		
 		e[120] = new GameEvent("You sit down for lunch. What will you eat?", allOpts[120]);
 		
 		//allOpts[115][0] = new Option("", 1, 100);
@@ -1043,10 +1044,29 @@ public class TextGame {
 		e[162] = new GameEvent("You flail your arms, trying to slow down.", allOpts[162]);
 
 		allOpts[163] = new Option[1];
-		allOpts[163][0] = new Option("Prepare to land.", 1, 100);
+		allOpts[163][0] = new Option("Prepare to land.", 1, 164);
 		
 		e[163] = new GameEvent("You feel the need to look behind you. "
 				+ "\n As you turn around, a massive object dominates your view.", allOpts[163]);
+		
+		allOpts[164] = new Option[1];
+		allOpts[164][0] = new Option("Walk around.", 1, 165);
+		
+		e[164] = new GameEvent("After some time, you collide with the surface of this object. "
+				+ "\n It appears to have enough gravitational pull for you to walk.", allOpts[164]);
+		
+		allOpts[165] = new Option[2];
+		allOpts[165][0] = new Option("Keep walking.", 1, 166);
+		allOpts[165][1] = new Option("Contemplate your choices.", 2, 50);
+		
+		e[165] = new GameEvent("You walk for about 45 minutes. This location looks familiar to you.", allOpts[165]);
+		
+		allOpts[166] = new Option[2];
+		allOpts[166][0] = new Option("Keep walking.", 1, 166);
+		allOpts[166][1] = new Option("Contemplate your choices.", 2, 50);
+		
+		e[166] = new GameEvent("It seems you have arrived at the location you started. "
+				+ "\n This must be a small planet.", allOpts[166]);
 		
 		allOpts[170] = new Option[1];
 		allOpts[170][0] = new Option("Open your eyes.", 1, 171);
@@ -1581,7 +1601,7 @@ public class TextGame {
 		if (i == 22) {
 			foundCarPortal = true;
 			
-			if (randomizer == 1 || randomizer == 2) {
+			if (randomizer < 5 && randomizer > 0) {
 				allEvents[2].options = new Option[5];
 				allEvents[2].options[0] = new Option("6", 1, 4);
 				allEvents[2].options[1] = new Option("-4", 2, 4);
@@ -1595,7 +1615,7 @@ public class TextGame {
 				allEvents[2].options[2] = new Option("-2", 3, 5);
 				allEvents[2].options[3] = new Option("-22.2-2222..2", 4, 9);
 				allEvents[2].options[4] = new Option("'I'm here.'", 5, 10);
-			} else if (randomizer == 3 || randomizer == 4) {
+			} else if (randomizer >= 5) {
 				allEvents[2].options = new Option[5];
 				allEvents[2].options[0] = new Option("-3", 1, 4);
 				allEvents[2].options[1] = new Option("-2", 2, 4);
