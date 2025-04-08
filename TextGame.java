@@ -24,6 +24,7 @@ public class TextGame {
 	static boolean foundCavePortal = false;
 	static boolean restUnlocked = false;
 	static boolean thirdEyeOpen = false;
+	static boolean metAnthony = false;
 	
 	static boolean hasPick = false;
 	
@@ -42,6 +43,10 @@ public class TextGame {
 	static int callForHelpCounter = 0;
 	static int mineTreeCounter = 0;
 	static int mineGroundCounter = 0;
+	static int chainedCounter = 0;
+	static int spaceDistance = 0;
+
+	static int spaceSpeed = 100;
 	
 
 	public static void main(String[] args) { // this method runs when the program starts
@@ -240,7 +245,7 @@ public class TextGame {
 				+ "\n you have succumb to the shadows.", allOpts[11]);
 		
 		allOpts[12] = new Option[2];
-		allOpts[12][0] = new Option("Try to get up.", 1, 100);
+		allOpts[12][0] = new Option("Try to get up.", 1, 11);
 		allOpts[12][1] = new Option("Contemplate your choices.", 2, 50);
 		
 		e[12] = new GameEvent("You lunge forward and sink to the ground, "
@@ -275,7 +280,7 @@ public class TextGame {
 		
 		allOpts[17] = new Option[2];
 		allOpts[17][0] = new Option("Keep running.", 1, 16);
-		allOpts[17][1] = new Option("Taunt", 2, 100);
+		allOpts[17][1] = new Option("Taunt", 2, 46);
 		
 		e[17] = new GameEvent("Dr. Main floats between you and the sun. "
 				+ "\n Its rays burn into your eyes.", allOpts[17]);
@@ -464,6 +469,29 @@ public class TextGame {
 		
 		e[45] = new GameEvent("You find yourself in history class, a little confused.", allOpts[45]);
 		
+		allOpts[46] = new Option[1];
+		allOpts[46][0] = new Option("Oh noooooooooooooooo!", 1, 47);
+		
+		e[46] = new GameEvent("Dr. Main chuckles. With a flick of his wrist, you rocket into the sky. "
+				+ "\n You lose sight of the ground.", allOpts[46]);
+		
+		allOpts[47] = new Option[2];
+		allOpts[47][0] = new Option("'Put me down!", 1, 48);
+		allOpts[47][1] = new Option("'To space?'", 2, 160);
+		
+		e[47] = new GameEvent("You continue flying directly away from the Earth. "
+				+ "\n How far will you go?", allOpts[47]);
+		
+		allOpts[48] = new Option[1];
+		allOpts[48][0] = new Option("'No no no.'", 1, 49);
+		
+		e[48] = new GameEvent("You begin to fall. You gain speed.", allOpts[48]);
+		
+		allOpts[49] = new Option[1];
+		allOpts[49][0] = new Option("Ouch.", 1, 11);
+		
+		e[49] = new GameEvent("CRASH.");
+		
 		allOpts[50] = new Option[4];
 		allOpts[50][0] = new Option("Woe and despair.", 1, 54);
 		allOpts[50][1] = new Option("Malice and rage.", 2, 55);
@@ -551,7 +579,7 @@ public class TextGame {
 		
 		e[64] = new GameEvent("'Good enough, I guess.'", allOpts[64]);
 		
-		allOpts[65] = new Option[4];
+		allOpts[65] = new Option[3];
 		allOpts[65][0] = new Option("First stall.", 1, 66);
 		allOpts[65][1] = new Option("Second stall.", 2, 67);
 		allOpts[65][2] = new Option("Third stall.", 3, 100);
@@ -747,7 +775,7 @@ public class TextGame {
 		e[82] = new GameEvent("You are a rock.", allOpts[82]);
 
 		allOpts[83] = new Option[2];
-		allOpts[83][0] = new Option("See if Dr. Schilling is still in her office.", 1, 100);
+		allOpts[83][0] = new Option("See if Dr. Schilling is still in her office.", 1, 84);
 		allOpts[83][1] = new Option("Head to science class.", 2, 61);
 		
 		e[83] = new GameEvent("You're alone in the office. It is eerily quiet.", allOpts[83]);
@@ -994,7 +1022,32 @@ public class TextGame {
 		allOpts[154][0] = new Option("'Thanks.'", 1, 11);
 		
 		e[154] = new GameEvent("'Allow me to return you, then.", allOpts[154]);
+		
+		
+		allOpts[160] = new Option[2];
+		allOpts[160][0] = new Option("Float as long as you can.", 1, 160);
+		allOpts[160][1] = new Option("Try to slow down.", 2, 162);
+		
+		e[160] = new GameEvent("You exit the atmosphere. You have retained significant momentum.", allOpts[160]);
+		
+		allOpts[161] = new Option[2];
+		allOpts[161][0] = new Option("Keep floating.", 1, 161);
+		allOpts[161][1] = new Option("Try to slow down.", 2, 162);
+		
+		e[161] = new GameEvent("You are flying through empty space.", allOpts[161]);
+		
+		allOpts[162] = new Option[2];
+		allOpts[162][0] = new Option("Keep flailing your arms.", 1, 162);
+		allOpts[162][1] = new Option("Just float.", 2, 161);
+		
+		e[162] = new GameEvent("You flail your arms, trying to slow down.", allOpts[162]);
 
+		allOpts[163] = new Option[1];
+		allOpts[163][0] = new Option("Prepare to land.", 1, 100);
+		
+		e[163] = new GameEvent("You feel the need to look behind you. "
+				+ "\n As you turn around, a massive object dominates your view.", allOpts[163]);
+		
 		allOpts[170] = new Option[1];
 		allOpts[170][0] = new Option("Open your eyes.", 1, 171);
 		
@@ -1010,7 +1063,7 @@ public class TextGame {
 		
 		allOpts[172] = new Option[3];
 		allOpts[172][0] = new Option("Walk toward the corn.", 1, 180);
-		allOpts[172][1] = new Option("Walk away from the corn.", 2, 100);
+		allOpts[172][1] = new Option("Walk away from the corn.", 2, 185);
 		allOpts[172][2] = new Option("Call for help.", 3, 173);
 		
 		e[172] = new GameEvent("The air is hot and wet. Insects buzz about. Far in the distance, you can see..."
@@ -1026,7 +1079,7 @@ public class TextGame {
 		
 		allOpts[174] = new Option[2];
 		allOpts[174][0] = new Option("Uphill.", 1, 180);
-		allOpts[174][1] = new Option("Downhill.", 2, 100);
+		allOpts[174][1] = new Option("Downhill.", 2, 185);
 		
 		e[174] = new GameEvent("Which way will you walk?", allOpts[174]);
 		
@@ -1047,7 +1100,7 @@ public class TextGame {
 		
 		allOpts[177] = new Option[2];
 		allOpts[177][0] = new Option("Become indignant.", 1, 178);
-		allOpts[177][1] = new Option("Join them.", 2, 100);
+		allOpts[177][1] = new Option("Join them.", 2, 180);
 		
 		e[177] = new GameEvent("'waawiipihkaako! šaaye eehpiši iiyaayankwi!'", allOpts[177]);
 		
@@ -1060,7 +1113,7 @@ public class TextGame {
 		
 		allOpts[180] = new Option[2];
 		allOpts[180][0] = new Option("Try to help with the cooking.", 1, 181);
-		allOpts[180][1] = new Option("Run away.", 2, 100);
+		allOpts[180][1] = new Option("Run away.", 2, 185);
 		
 		e[180] = new GameEvent("You arrive in a small town. People talk while cooking. "
 				+ "\n Children are playing. Everywhere there is corn growing.", allOpts[180]);
@@ -1073,8 +1126,8 @@ public class TextGame {
 				+ "\n 'weeyaakahaakani ayoolo, waaphkilookia.'", allOpts[181]);
 		
 		allOpts[182] = new Option[2];
-		allOpts[182][0] = new Option("Run away.", 1, 100);
-		allOpts[182][1] = new Option("Laugh along.", 2, 100);
+		allOpts[182][0] = new Option("Run away.", 1, 185);
+		allOpts[182][1] = new Option("Laugh along.", 2, 184);
 		
 		e[182] = new GameEvent("Everyone erupts with laughter as you burn your tongue on the unfinished food.", allOpts[182]);
 		
@@ -1090,6 +1143,53 @@ public class TextGame {
 		e[184] = new GameEvent("The rest of your night is spent enjoying good food and laughter."
 				+ "\n Your new friends teach you as much of their language as they can.", allOpts[184]);
 		
+		allOpts[185] = new Option[2];
+		allOpts[185][0] = new Option("'There must be some mistake, I'm American!'", 1, 186);
+		allOpts[185][1] = new Option("'You don't sound very American.'", 2, 191);
+		
+		e[185] = new GameEvent("You walk for a while, until a band of soldiers on horseback spot you."
+				+ "\n 'Where art thov travelling, Frenchman? Thov treadft on American landf.'", allOpts[185]);
+		
+		allOpts[186] = new Option[1];
+		allOpts[186][0] = new Option("Protest thine fate.", 1, 187);
+		
+		e[186] = new GameEvent("'Bvt thine fafhion is that of a Frenchman, fvrely.'"
+				+ "'Clap the Frenchman in ironf.'", allOpts[186]);
+		
+		allOpts[187] = new Option[2];
+		allOpts[187][0] = new Option("Try to keep up.", 1, 189);
+		allOpts[187][1] = new Option("Drop to the ground.", 2, 188);
+		
+		e[187] = new GameEvent("The Americans tie your shackles to the saddle of a horse. "
+				+ "\n You begin to walk behind the soldiers. "
+				+ "\n The horse drags you along at an uncomfortable pace.", allOpts[187]);
+		
+		allOpts[188] = new Option[1];
+		allOpts[188][0] = new Option("'Why?'", 1, 11);
+		
+		e[188] = new GameEvent("You fall into the dirt, the horse drags you for a while."
+				+ "\n The course ground breaking your skin as you're pulled forward."
+				+ "\n You lose consciousness.", allOpts[188]);
+		
+		allOpts[189] = new Option[1];
+		allOpts[189][0] = new Option("Wait.", 1, 190);
+		
+		e[189] = new GameEvent("You are sure you have walked several miles at this point. It must have been hours."
+				+ "\n Exhausted, you finally arrive at the Americans' camp. The surroundings here disgust you."
+				+ "\n You are chained to a post.", allOpts[189]);
+		
+		allOpts[190] = new Option[1];
+		allOpts[190][0] = new Option("Keep waiting.", 1, 190);
+		
+		e[190] = new GameEvent("You cannot seem to find a comfortable way to sit. The camp stirs around you."
+				+ "\n They seem to be preparing for war.", allOpts[190]);
+		
+		
+		allOpts[191] = new Option[1];
+		allOpts[191][0] = new Option("Protest thine fate.", 1, 187);
+		
+		e[191] = new GameEvent("'Fpoken like a trve Frenchman!' "
+				+ "\n 'Clap him in ironf.'", allOpts[191]);
 		
 		return e;
 	} 
@@ -1179,6 +1279,45 @@ public class TextGame {
 				allEvents[173].options[2] = new Option("Call again.", 3, 175);
 			}
 			
+		}
+		
+		if (i == 162) {
+			spaceSpeed = spaceSpeed - 1;
+			spaceDistance = spaceDistance + spaceSpeed;
+			
+			if (spaceDistance > 2500) {
+				allEvents[161].options = new Option[2];
+				allEvents[161].options[0] = new Option("Keep floating.", 1, 163);
+				allEvents[161].options[1] = new Option("Try to slow down.", 2, 163);
+				
+				allEvents[161] = new GameEvent("You are flying through empty space.", allEvents[161].options);
+				
+				allEvents[162].options = new Option[2];
+				allEvents[162].options[0] = new Option("Keep flailing your arms.", 1, 163);
+				allEvents[162].options[1] = new Option("Just float.", 2, 163);
+				
+				allEvents[162] = new GameEvent("You flail your arms, trying to slow down.", allEvents[162].options);
+
+			}
+		}
+		
+		if (i == 161) {
+			spaceDistance = spaceDistance + spaceSpeed;
+			
+			if (spaceDistance > 2500) {
+				allEvents[161].options = new Option[2];
+				allEvents[161].options[0] = new Option("Keep floating.", 1, 163);
+				allEvents[161].options[1] = new Option("Try to slow down.", 2, 163);
+				
+				allEvents[161] = new GameEvent("You are flying through empty space.", allEvents[161].options);
+				
+				allEvents[162].options = new Option[2];
+				allEvents[162].options[0] = new Option("Keep flailing your arms.", 1, 163);
+				allEvents[162].options[1] = new Option("Just float.", 2, 163);
+				
+				allEvents[162] = new GameEvent("You flail your arms, trying to slow down.", allEvents[162].options);
+
+			}
 		}
 		
 		if (i == 154) {
@@ -1468,7 +1607,7 @@ public class TextGame {
 		}
 		
 		if (i == 11) {
-			
+			resetCounters();
 			noIDontCounter = 0;
 			triedToBeRockCounter = 0;
 			isARockCounter = 0;
