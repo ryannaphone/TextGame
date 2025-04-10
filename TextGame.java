@@ -567,8 +567,8 @@ public class TextGame {
 		e[62] = new GameEvent("Incorrect, please try again.", allOpts[62]);
 
 		allOpts[63] = new Option[2];
-		allOpts[63][0] = new Option("Look for the 3rd floor.", 1, 100);
-		allOpts[63][1] = new Option("'There's a third floor?!'", 2, 100);
+		allOpts[63][0] = new Option("Look for the 3rd floor.", 1, 116);
+		allOpts[63][1] = new Option("'There's a third floor?!'", 2, 117);
 		
 		e[63] = new GameEvent("'Congratulations! You just earned a nobel prize in biology!' "
 				+ "\n 'Please make your way to the 3rd floor for the award ceremony.'", allOpts[63]);
@@ -914,22 +914,78 @@ public class TextGame {
 		e[114] = new GameEvent("'I had hoped we could come to some arrangement, but alas...'", allOpts[114]);
 
 		allOpts[115] = new Option[0];
-		
 		e[115] = new GameEvent("'Good luck.'", allOpts[115]);
 		
-		allOpts[120] = new Option[3];
+		allOpts[116] = new Option[2];
+		allOpts[116][0] = new Option("Go to the bathroom.", 1, 65);
+		allOpts[116][1] = new Option("Keep looking.", 2, 116);
 		
+		e[116] = new GameEvent("You wander the halls, checking each door, but you can't find any way to get to the 3rd floor.", allOpts[116]);
+		
+		allOpts[117] = new Option[2];
+		allOpts[117][0] = new Option("'But you said third FLOOR.'", 1, 118);
+		allOpts[117][1] = new Option("'What is the third door?'", 2, 100);
+		
+		e[117] = new GameEvent("'Did I say third floor? I meant third DOOR!'", allOpts[117]);
+		
+		allOpts[118] = new Option[2];
+		allOpts[118][0] = new Option("'Suuuuuure you did.'", 1, 119);
+		allOpts[118][1] = new Option("'But what is the third door?", 2, 100);
+		
+		e[118] = new GameEvent("'I misspoke... It happens.'", allOpts[118]);
+		
+		allOpts[119] = new Option[1];
+		allOpts[119][0] = new Option("Doubt anything and everything.", 1, 100);
+		
+		e[119] = new GameEvent("'You'll doubt anything, won't you.'", allOpts[119]);
+		
+		allOpts[120] = new Option[3];
+		allOpts[120][0] = new Option("Peanut butter and jelly.", 1, 100);
+		allOpts[120][1] = new Option("Chips and candy.", 2, 100);
+		allOpts[120][2] = new Option("'I don't have a lunch.'", 3, 100);
 		
 		e[120] = new GameEvent("You sit down for lunch. What will you eat?", allOpts[120]);
+		
+		
 		
 		//allOpts[115][0] = new Option("", 1, 100);
 		
 		allOpts[130] = new Option[2];
-		allOpts[130][0] = new Option("Left.", 1, 100);
-		allOpts[130][1] = new Option("Right.", 2, 100);
+		allOpts[130][0] = new Option("Left.", 1, 131);
+		allOpts[130][1] = new Option("Right.", 2, 132);
 		
 		e[130] = new GameEvent("You sink deep below the school, to a dark maze."
 				+ "\n A roaring sound echoes around the byzantine halls.", allOpts[130]);
+		
+		allOpts[131] = new Option[2];
+		allOpts[131][0] = new Option("Left", 1, 131);
+		allOpts[131][1] = new Option("Right", 2, 132);
+		
+		e[131] = new GameEvent("You have walked for what feels like ages, but have the feeling that you've arrived exactly where you started.", allOpts[131]);
+		
+		allOpts[132] = new Option[2];
+		allOpts[132][0] = new Option("Go up.", 1, 133);
+		allOpts[132][1] = new Option("Go down.", 2, 135);
+		
+		e[132] = new GameEvent("The path before you splits into two staircases, one going up, the other down.", allOpts[132]);
+		
+		allOpts[133] = new Option[2];
+		allOpts[133][0] = new Option("Look around.", 1, 100);
+		allOpts[133][1] = new Option("Go back up the stairs.", 2, 134);
+		
+		e[133] = new GameEvent("The stairs stretch on forever. Finally, you emerge from the stairwell and find yourself standing on the side of a massive cube.", allOpts[133]);
+		
+		allOpts[134] = new Option[2];
+		allOpts[134][0] = new Option("Go down the stairs.", 1, 135);
+		allOpts[134][1] = new Option("Look around.", 2, 100);
+		
+		e[134] = new GameEvent("The stairs you walked down before have changed direction. "
+				+ "\n They appear to go down now.", allOpts[134]);
+		
+		allOpts[135] = new Option[1];
+		allOpts[135][0] = new Option("'I will reach the bottom.'", 1, 135);
+		
+		e[135] = new GameEvent("'There is no end to the depths you will traverse.", allOpts[135]);
 		
 		allOpts[140] = new Option[3];
 		allOpts[140][0] = new Option("Smack a tree.", 1, 141);
