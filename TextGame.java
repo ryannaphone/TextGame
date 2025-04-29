@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class TextGame {
 	
 	// declare variables
-	static int totalEvents = 201;
+	static int totalEvents = 1000;
 	static Random rand = new Random();
 	static int randomizer = rand.nextInt(10);
 	
@@ -314,13 +314,14 @@ public class TextGame {
 		e[21] = new GameEvent("Dr. Schilling waits behind her desk. "
 				+ "\n 'Do you know why you're here?'", allOpts[21]);
 		
-		allOpts[22] = new Option[2];
+		allOpts[22] = new Option[3];
 		allOpts[22][0] = new Option("Head to math class.", 1, 2);
 		allOpts[22][1] = new Option("'I guess it's time to try the frogger idea.'", 2, 23);
+		allOpts[22][2] = new Option("Try a different car.", 3, 401);	
 		
 		e[22] = new GameEvent("A nearby car door flings open and inside you see... "
 				+ "\n ...your math class?", allOpts[22]);
-		
+				
 		allOpts[23] = new Option[2];
 		allOpts[23][0] = new Option("Keep jumping; truly channel the frog within you.", 1, 30);
 		allOpts[23][1] = new Option("Give up.", 2, 11);
@@ -1267,6 +1268,92 @@ public class TextGame {
 		e[191] = new GameEvent("'Fpoken like a trve Frenchman!' "
 				+ "\n 'Clap him in ironf.'", allOpts[191]);
 		
+		allOpts[401] = new Option[2];
+		allOpts[401][0] = new Option("Turn Around.", 1, 22);
+		allOpts[401][1] = new Option("Keep going.", 2, 402);
+		
+		e[401] = new GameEvent("A nearby car door flings open and inside you see... "
+				+ "\n ...SPACE?!?!?!?!?!?", allOpts[401]);
+		
+		allOpts[402] = new Option[2];
+		allOpts[402][0] = new Option("Turn Around.", 1, 100);
+		allOpts[402][1] = new Option("Explore.", 2, 403);
+		
+		e[402] = new GameEvent("You step through and you look around. "
+				+ "\n You are standing on a small rock. It seems to be surrounded by other small rocks...", allOpts[402]);
+		allOpts[403] = new Option[2];
+		allOpts[403][0] = new Option("Eat.", 1, 404);
+		allOpts[403][1] = new Option("Ignore.", 2, 408);
+		
+		e[403] = new GameEvent("You look downwards. "
+				+ "\n You see dirt on the ground that is littered with berries", allOpts[403]);
+		
+		allOpts[404] = new Option[2];
+		allOpts[404][0] = new Option("Eat more.", 1, 405);
+		allOpts[404][1] = new Option("Look up.", 2, 407);
+		
+		e[404] = new GameEvent("A voice speaks from above you. It says:"
+				+ "\n Eat, eat.", allOpts[404]);
+		
+		allOpts[405] = new Option[2];
+		allOpts[405][0] = new Option("Ignore it.", 1, 407);
+		allOpts[405][1] = new Option("Look around.", 2, 406);
+		
+		e[405] = new GameEvent("You take another bite; It tastes like oreos. "
+				+ "\n You then hear applause from above you.", allOpts[405]);
+		
+		allOpts[406] = new Option[1];
+		allOpts[406][0] = new Option("Continue", 1, 410);
+		
+		e[406] = new GameEvent("You glance around. In front of you is a whole colony of green creatures that resemble a frog crossed with a seal."
+				+ "\n You then realize that they gave you earbuds when you stepped onto the planet. The earbuds let you understand and speak their language..", allOpts[406]);
+
+		allOpts[407] = new Option[2];
+		allOpts[407][0] = new Option("Ignore it.", 1, 405);
+		allOpts[407][1] = new Option("Look around.", 2, 406);
+		
+		e[407] = new GameEvent("You take another bite; It tastes like oreos. "
+				+ "\n You then hear applause from above you.", allOpts[407]);
+		
+		allOpts[408] = new Option[3];
+		allOpts[408][0] = new Option("Beg for mercy", 1, 409);
+		allOpts[408][1] = new Option("Accept and say nothing", 2, 14);
+		allOpts[408][2] = new Option("Nod and say yup!!! sassily", 3, 14);
+		
+		e[408] = new GameEvent("The alien says: "
+				+ "\n 'YOU COME TO OUR PLACE, AND NEGLECT OUR FOOD???'.", allOpts[408]);
+		
+		allOpts[409] = new Option[2];
+		allOpts[409][0] = new Option("We don't eat berries back home. Our berries are poisonous, not yummy.", 1, 409);
+		allOpts[409][1] = new Option("Accept and say nothing", 2, 14);
+		allOpts[409][1] = new Option("Say 'See now, why should I tell YOU that?'", 2, 411);
+		
+		e[409] = new GameEvent("The alien says: "
+				+ "\n 'Hmm... you seem sincere. why didn't you eat it?'", allOpts[409]);
+		
+
+		allOpts[410] = new Option[1];
+		allOpts[410][0] = new Option("Eat", 1, 405);
+		
+		e[410] = new GameEvent("The alien says: "
+				+ "\n 'Eat, eat.'", allOpts[410]);
+		
+		allOpts[411] = new Option[1];
+		allOpts[411][0] = new Option("Beg for mercy", 1, 405);
+		//allOpts[411][1] = new Option("Say nothing", 2, 412);
+		
+		e[411] = new GameEvent("You hear the whirring of something behind you as a tight grip pulls on your hands. "
+				+ "\n What could THAT be?", allOpts[411]);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		return e;
 	} 
 	
@@ -1485,6 +1572,12 @@ public class TextGame {
 			gameInProgress = false;
 			
 		}
+		
+		//if (i == 420) {
+			//gameInProgress = false;
+			
+		//}
+
 		
 		if (i == 101) {
 		caveDiverCounter++;
