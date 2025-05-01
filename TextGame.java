@@ -467,7 +467,9 @@ public class TextGame {
 		allOpts[45] = new Option[1];
 		allOpts[45][0] = new Option("Begin class.", 1, 70);
 		
-		e[45] = new GameEvent("You find yourself in history class, a little confused.", allOpts[45]);
+		e[45] = new GameEvent("You find yourself in history class, a little confused", allOpts[45]);
+		
+	
 		
 		allOpts[46] = new Option[1];
 		allOpts[46][0] = new Option("Oh noooooooooooooooo!", 1, 47);
@@ -584,7 +586,7 @@ public class TextGame {
 		allOpts[65][1] = new Option("Second stall.", 2, 67);
 		allOpts[65][2] = new Option("Third stall.", 3, 100);
 		
-		e[65] = new GameEvent("In the bathroom, there are three stalls before you. Which stall will you choose?", allOpts[65]);
+		e[65] = new GameEvent("In the ba   throom, there are three stalls before you. Which stall will you choose?", allOpts[65]);
 		
 		if (randomizer == 0) {
 		
@@ -691,21 +693,25 @@ public class TextGame {
 		e[69] = new GameEvent("You poop.", allOpts[69]);
 		
 		allOpts[70] = new Option[4];
-		allOpts[70][0] = new Option("1066 AD", 1, 72);
-		allOpts[70][1] = new Option("1213 AD", 2, 71);
-		allOpts[70][2] = new Option("1945 AD", 3, 71);
-		allOpts[70][3] = new Option("1444 AD", 4, 71);
+		allOpts[70][0] = new Option("The Mongols.", 1, 7);
+		allOpts[70][1] = new Option("The Romans.", 2, 71);
+		allOpts[70][2] = new Option("The Ottomans.", 3, 192);
+		allOpts[70][3] = new Option("The U.S.A.", 4, 71);
 		
-		e[70] = new GameEvent("What year was the battle of Hastings?", allOpts[70]);
+		e[70] = new GameEvent("Who conquered Byzantium?", allOpts[70]);
 
 		allOpts[71] = new Option[4];
-		allOpts[71][0] = new Option("1066 AD", 1, 73);
-		allOpts[71][1] = new Option("1213 AD", 2, 71);
-		allOpts[71][2] = new Option("1945 AD", 3, 71);
-		allOpts[71][3] = new Option("1444 AD", 4, 71);
+		allOpts[71][0] = new Option("The Mongols.", 1, 193);
+		allOpts[71][0] = new Option("The Romans.", 1, 193);
+		allOpts[71][0] = new Option("The Ottomans.", 1, 192);
+		allOpts[71][0] = new Option("The U.S.A.", 1, 193);
 		
-		e[71] = new GameEvent("'I don't think that's right. Give it another try.'", allOpts[71]);
-
+		e[193] = new GameEvent("'I don't think that's right. Give it another try.'", allOpts[71]);
+	
+		allOpts[192] = new Option[1];
+		e[192] = new GameEvent("'Great you got that right.'", allOpts[192]);
+		allOpts[192][0] = new Option("leave class.", 1, 120);
+		
 		allOpts[72] = new Option[2];
 		allOpts[72][0] = new Option("Kowtow.", 1, 76);
 		allOpts[72][1] = new Option("Make your escape.", 2, 75);
