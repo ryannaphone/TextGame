@@ -1,3 +1,4 @@
+package Code;
 
 import java.util.NoSuchElementException; // import necessary packages
 import java.util.Random;
@@ -6,7 +7,7 @@ import java.util.Scanner;
 public class TextGame {
 	
 	// declare variables
-	static int totalEvents = 201;
+	static int totalEvents = 701;
 	static Random rand = new Random();
 	static int randomizer = rand.nextInt(10);
 	
@@ -242,7 +243,7 @@ public class TextGame {
 		allOpts[11][0] = new Option("Open your eyes.", 1, 1);
 		
 		e[11] = new GameEvent("Your vision narrows to a point, "
-				+ "\n you have succumb to the shadows.", allOpts[11]);
+				+ "\n you have succumbed to the shadows.", allOpts[11]);
 		
 		allOpts[12] = new Option[2];
 		allOpts[12][0] = new Option("Try to get up.", 1, 11);
@@ -602,7 +603,9 @@ public class TextGame {
 			allOpts[68][0] = new Option("Enter the stall.", 1, 130);
 			allOpts[68][1] = new Option("Choose another stall.", 2, 65);
 			e[68] = new GameEvent("You see a dark maze. Sounds echo for eons.", allOpts[68]);
-				
+			
+			
+			
 		} else if (randomizer == 1 || randomizer == 2) {
 			allOpts[66] = new Option[2];
 			allOpts[66][0] = new Option("Enter the stall.", 1, 69);
@@ -983,9 +986,33 @@ public class TextGame {
 				+ "\n They appear to go down now.", allOpts[134]);
 		
 		allOpts[135] = new Option[1];
-		allOpts[135][0] = new Option("'I will reach the bottom.'", 1, 135);
+		allOpts[135][0] = new Option("'I will reach the bottom.'", 1, 600);
 		
 		e[135] = new GameEvent("'There is no end to the depths you will traverse.", allOpts[135]);
+		
+		allOpts[600] = new Option[1];
+		allOpts[600][0] = new Option("'Continue onwards.'", 1, 601);
+		
+		e[600] = new GameEvent("'You reach the bottom of the stairs. Once you do you see a single, long corridor ahead.'", allOpts[600]);
+		
+		allOpts[601] = new Option[2];
+		allOpts[601][0] = new Option("'Try the door.'", 1, 602);
+		allOpts[601][1] = new Option("'Turn back.'", 2, 11);
+		
+		e[601] = new GameEvent("'You come across an obstruction in the passageway." 
+				+ "\n A solid iron wall appears in front of you."
+				+ "\n Fortunately, there is a door.'", allOpts[601]);
+		
+		allOpts[602] = new Option[1];
+		allOpts[602][0] = new Option("'Keep going.'", 1, 603);
+		
+		e[602] = new GameEvent("'The door is not locked and gives way easily.'", allOpts[602]);
+		
+		allOpts[603] = new Option[1];
+		allOpts[603][0] = new Option("'Open your eyes.'", 1, 604);
+		
+		e[603] = new GameEvent("'Your vision turns black,"
+				+"\n you have entered the shadows.'", allOpts[603]);
 		
 		allOpts[140] = new Option[3];
 		allOpts[140][0] = new Option("Smack a tree.", 1, 141);
