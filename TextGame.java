@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class TextGame {
 	
 	// declare variables
-	static int totalEvents = 899;
+	static int totalEvents = 201;
 	static Random rand = new Random();
 	static int randomizer = rand.nextInt(10);
 	
@@ -33,11 +33,6 @@ public class TextGame {
 	static boolean woe = false;
 	static boolean peace = false;
 	
-	static boolean RawHatred = false;
-	static boolean UnbrokenJoy = false;
-	static boolean DeepDepression = false;
-	static boolean Tranquility = false;
-	
 	static int noIDontCounter = 0;
 	static int triedToBeRockCounter = 0;
 	static int isARockCounter = 0;
@@ -50,7 +45,6 @@ public class TextGame {
 	static int mineGroundCounter = 0;
 	static int chainedCounter = 0;
 	static int spaceDistance = 0;
-	static int mindBlast=0;
 
 	static int spaceSpeed = 100;
 	
@@ -540,8 +534,8 @@ public class TextGame {
 		e[56] = new GameEvent("Pride subsumes your being.", allOpts[56]);
 
 		allOpts[57] = new Option[2];
-		allOpts[57][0] = new Option("Head inside.", 1, 2);
-		allOpts[57][1] = new Option("RUN.", 2, 3);
+		allOpts[57][0] = new Option("RUN.", 1, 3);
+		allOpts[57][1] = new Option("Head inside.", 2, 2);
 		
 		e[57] = new GameEvent("You scream as loud as you can."
 				+ "\n Your rage emanates through the air.", allOpts[57]);
@@ -1273,20 +1267,6 @@ public class TextGame {
 		e[191] = new GameEvent("'Fpoken like a trve Frenchman!' "
 				+ "\n 'Clap him in ironf.'", allOpts[191]);
 		
-		e[801] = new GameEvent("The water boils on your skin, yet you feel no pain."
-				+ "\n Your sheer fury propells you down like a torpedo to a cave in the water.", allOpts[801]);
-		
-		e[802] = new GameEvent("You realize that you are hurdling towards the sun, and no amount of desperation seems to be helping.", allOpts[802]);
-		allOpts[802] = new Option[1];
-		allOpts[802][0] = new Option("Accept the touch of fire.", 1, 11);
-		
-		e[803] = new GameEvent("You dive into the sun, foot first as though you were trying to dropkick it."
-				+ "\n Instead of incinerating, you burst through the surface and onto a cold desert, the skies above are starry and the sand is bright orange.", allOpts[803]);
-		allOpts[803] = new Option [3];
-		allOpts[803][0]=new Option ("Go left.",1,100);
-		allOpts[803][0]=new Option ("Go straight.",2,100);
-		allOpts[803][0]=new Option ("Go right.",3,100);
-		
 		return e;
 	} 
 	
@@ -1299,7 +1279,6 @@ public class TextGame {
 		foundYellowDoor = false;
 		foundCavePortal = false;
 		restUnlocked = false;
-		
 		
 		resetCounters();
 		
@@ -1314,7 +1293,6 @@ public class TextGame {
 		restCounter = 0;
 		swimToShoreCounter = 0;
 		swimDownCounter = 0;
-		mindBlast=0;
 	}
 	
 	static public void woe() {
@@ -1341,21 +1319,17 @@ public class TextGame {
 		
 		allEvents[1].options = new Option[2];
 		allEvents[1].options[0] = new Option("Head to your math class.", 1, 2);
-		allEvents[1].options[1] = new Option("RAGE.", 2, 57);
+		allEvents[1].options[1] = new Option("RAGE.", 2, 100);
 		
 		allEvents[32].options = new Option[2];
 		allEvents[32].options[0] = new Option("Hold your stance.", 1, 33);
 		allEvents[32].options[1] = new Option("RAGE", 2, 34);
-		
-		allEvents[92].options[0] = new Option("Take your seat.", 1, 70);
-		allEvents[802].options[1] = new Option("Face the star.", 2, 803);
 	}
 	
 	static public void pride() {
 		pride = true;
 		woe = false;
 		malice = false;
-		peace = false;
 	}
 	
 	static public void peace() {
@@ -1420,12 +1394,6 @@ public class TextGame {
 				allEvents[162] = new GameEvent("You flail your arms, trying to slow down.", allEvents[162].options);
 
 			}
-		
-		if (spaceSpeed > 5000) {
-			i = 802;
-		}
-
-
 		}
 		
 		if (i == 154) {
@@ -1433,10 +1401,6 @@ public class TextGame {
 			woe = false;
 			malice = false;
 			pride = false;
-			RawHatred = false;
-			UnbrokenJoy = false;
-			DeepDepression = false;
-			Tranquility = false;
 			foundCarPortal = false;
 			foundYellowDoor = false;
 			foundCavePortal = false;
@@ -1724,7 +1688,7 @@ public class TextGame {
 			triedToBeRockCounter = 0;
 			isARockCounter = 0;
 			caveDiverCounter = 0;
-			restCounter = 0;
+			//restCounter = 0;
 			swimToShoreCounter = 0;
 			swimDownCounter = 0;
 			
@@ -1742,7 +1706,7 @@ public class TextGame {
 				allEvents[11].options[0] = new Option("Open your eyes.", 1, 1);
 				allEvents[11].options[1] = new Option("Rest.", 2, 11);
 				allEvents[11].options[2] = new Option("Open your third eye.", 3, 150);
-				restCounter = 0;
+				//restCounter = 0;
 			}
 			
 		}
@@ -1752,16 +1716,6 @@ public class TextGame {
 			foundCarPortal = false;
 			foundYellowDoor = false;
 			foundCavePortal = false;
-			
-			malice = false;
-			pride = false;
-			woe = false;
-			peace = false;
-			
-			RawHatred = false;
-			UnbrokenJoy = false;
-			DeepDepression = false;
-			Tranquility = false;
 			
 			noIDontCounter = 0;
 			triedToBeRockCounter = 0;
