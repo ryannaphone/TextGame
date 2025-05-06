@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class TextGame {
 	
 	// declare variables
-	static int totalEvents = 201;
+	static int totalEvents = 400;
 	static Random rand = new Random();
 	static int randomizer = rand.nextInt(10);
 	
@@ -720,9 +720,9 @@ public class TextGame {
 		
 		e[73] = new GameEvent("'So you think you know a lot about history, huh?'", allOpts[73]);
 		
-		allOpts[74] = new Option[1];
+		allOpts[74] = new Option[2];
 		allOpts[74][0] = new Option("Head to lunch.",  1, 120);
-		
+		allOpts[74][1] = new Option("Head to fishbowl.",  2, 500);
 		e[74] = new GameEvent("The halls begin to buzz with the sound of students. "
 				+ "\n 'Seems it is time for lunch.", allOpts[74]);
 		
@@ -1264,9 +1264,58 @@ public class TextGame {
 		allOpts[191] = new Option[1];
 		allOpts[191][0] = new Option("Protest thine fate.", 1, 187);
 		
-		e[191] = new GameEvent("'Fpoken like a trve Frenchman!' "
-				+ "\n 'Clap him in ironf.'", allOpts[191]);
+		e[191] = new GameEvent("'Spoken like a true Frenchman!' "
+				+ "\n 'Clap him in iron.'", allOpts[191]);
 		
+		
+		allOpts[500] = new Option[3];
+		allOpts[500][0] = new Option("Kick it down!", 1, 502);
+		allOpts[500][1] = new Option("Look around for a key or something?", 2, 501);
+		allOpts[500][2] = new Option("Wait around.", 3, 503);
+		
+		e[500] = new GameEvent("'The door is locked?' ", allOpts[500]);
+		
+		
+		allOpts[501] = new Option[2];
+		allOpts[502][0] = new Option("Kick the door down! ", 1, 502);
+		allOpts[502][1] = new Option("Wait around", 2, 503);
+		
+		e[501] = new GameEvent("'as you search and search, you find nothing, your efforts where fruitless' ", allOpts[502]);
+
+		allOpts[502] = new
+		 Option[2];
+		allOpts[502][0] = new Option("Sit down at the table beside you", 1, 503);
+		allOpts[502][1] = new Option("Search your suroundings.", 2, 515);
+		
+		e[502] = new GameEvent("'The door shakes and screeches as it realeases from the door frame ' "
+				+ "\n'When you walk in, a sense of cold washes over you'", allOpts[502]);
+
+		allOpts[503] = new
+		 Option[2];
+		allOpts[503][0] = new Option("Struggle!", 1, 504);
+		allOpts[502][1] = new Option("Call for help", 2, 509);
+		
+		e[503] = new GameEvent("'As soon as you sit down your feet feel as if they are enveloped by the cold ' "
+				+ "\n'When you look down shadowy tendrils are upon your feet, and they are spreading'", allOpts[503]);
+		allOpts[504] = new
+		 Option[2];
+		allOpts[504][0] = new Option("Struggle harder!", 1, 11);
+		allOpts[504][1] = new Option("Confess", 2, 505);
+				
+		e[504] = new GameEvent("'The more you struggle, the more they envelope you ' "
+				+ "\n'As they grow, so do the shadows but then you hear it, a chant getting louder '"
+				+ "\n'A chant begging for confession '",allOpts[504]);
+				
+		allOpts[505] = new
+		 Option[2];
+		allOpts[505][0] = new Option("Confess your sins", 1, 511 );
+		allOpts[505][1] = new Option("Confess your secrets", 2, 506);
+		allOpts[505][1] = new Option("Lie", 3, 11);
+						
+		e[505] = new GameEvent("'The more you struggle, the more they envelo ' "
+				+ "\n'As they grow, so do the shadows but then you hear it, a chant getting louder '"
+				+ "\n'A chant begging for confession '",allOpts[505]);
+						
 		return e;
 	} 
 	
