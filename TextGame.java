@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class TextGame {
 	
 	// declare variables
-	static int totalEvents = 201;
+	static int totalEvents = 1000;
 	static Random rand = new Random();
 	static int randomizer = rand.nextInt(10);
 	
@@ -32,7 +32,8 @@ public class TextGame {
 	static boolean pride = false;
 	static boolean woe = false;
 	static boolean peace = false;
-	
+	static int twigCounter = 0;
+	static int rockCounter = 0;
 	static int noIDontCounter = 0;
 	static int triedToBeRockCounter = 0;
 	static int isARockCounter = 0;
@@ -45,7 +46,7 @@ public class TextGame {
 	static int mineGroundCounter = 0;
 	static int chainedCounter = 0;
 	static int spaceDistance = 0;
-
+	static int GAMBLING = 1000;
 	static int spaceSpeed = 100;
 	
 
@@ -267,7 +268,7 @@ public class TextGame {
 		allOpts[15] = new Option[3];
 		allOpts[15][0] = new Option("Turn right.", 1, 27);
 		allOpts[15][1] = new Option("Turn left.", 2, 29);
-		allOpts[15][2] = new Option("Turn around.", 3, 14);
+		allOpts[15][2] = new Option("Turn around.", 3, 200);
 		
 		e[15] = new GameEvent("You come to an unfamiliar road. ", allOpts[15]);
 		
@@ -1267,6 +1268,96 @@ public class TextGame {
 		e[191] = new GameEvent("'Fpoken like a trve Frenchman!' "
 				+ "\n 'Clap him in ironf.'", allOpts[191]);
 		
+		allOpts[200] = new Option[2];
+		allOpts[200][0] = new Option("Keep running.", 1, 202);
+		allOpts[200][1] = new Option("Fight.", 2, 201);
+		
+		e[200] = new GameEvent("You were able to spot the person chasing you, its Ms Brandon? ", allOpts[200]);
+		
+		allOpts[201] = new Option[2];
+		allOpts[201][0] = new Option("Do a cool backflip.", 1, 203);
+		allOpts[201][1] = new Option("Roundhouse kick.", 2, 204);
+		
+		e[201] = new GameEvent("'You arent supposed to be here' She says.", allOpts[201]);
+		
+		allOpts[202] = new Option[2];
+		allOpts[202][0] = new Option("Turn right.", 1, 27);
+		allOpts[202][1] = new Option("Turn left.", 2, 29);
+
+		
+		e[202] = new GameEvent("You come to an unfamiliar road. ", allOpts[202]);
+		
+		
+		e[203] = new GameEvent("Ms brandon watches for a second, and promtly sends you flying."
+		+ "\n You land in a blocky forest.", allOpts[140]);
+		
+		allOpts[204] = new Option[2];
+		allOpts[204][0] = new Option("Get up.", 1, 205);
+		allOpts[204][1] = new Option("Accept your fate.", 2, 11);
+		
+		e[204] = new GameEvent("You kick Ms. Brandon, but she doesnt budge."
+		+ "\n She smashes you into the ground.", allOpts[204]);
+		
+		allOpts[205] = new Option[1];
+		allOpts[205][0] = new Option("Check for an escape.", 1, 206);
+	e[205] = new GameEvent("You get sent flying into another part of the forest.", allOpts[205]);
+		
+		allOpts[206] = new Option[3];
+		allOpts[206][0] = new Option("Look for stones.", 1, 208);
+		allOpts[206][1] = new Option("Gather twigs.", 2, 207);
+		allOpts[206][2] = new Option("Check for an escape.", 3, 206);
+		
+		e[206] = new GameEvent("You look around, but the trees are too dense to walk through.", allOpts[206]);
+		
+		
+		
+		e[207] = new GameEvent("You collect 5 sticks.", allOpts[206]);
+		
+		e[208] = new GameEvent("You collect 5 rocks.", allOpts[206]);
+		
+		
+		allOpts[209] = new Option[3];
+		allOpts[209][0] = new Option("JUMP.", 1, 210);
+		allOpts[209][1] = new Option("JUMP.", 2, 210);
+		allOpts[209][2] = new Option("JUMP.", 3, 210);
+		
+		e[209] = new GameEvent("JUMP.", allOpts[209]);
+		
+		allOpts[210] = new Option[3];
+		allOpts[210][0] = new Option("Balatro", 1, 211);
+		allOpts[210][1] = new Option("Slot Machines", 2, 212);
+		allOpts[210][2] = new Option("Roulette", 3, 213);
+		
+		e[210] = new GameEvent("LETSGOGAMBLING. Money is " + GAMBLING, allOpts[210]);
+		allOpts[213] = new Option[4];
+		allOpts[213][0] = new Option("100", 1, 215);
+		allOpts[213][1] = new Option("1000", 2, 216);
+		allOpts[213][2] = new Option("10000", 3, 217);
+		allOpts[213][3] = new Option("100000", 3, 218);
+		e[213] = new GameEvent("How much. Money is " + GAMBLING, allOpts[213]);
+		
+		
+		if(rand.nextInt(1, 100)>= 30) { e[215] = new GameEvent ("yippee money is 100 + "+ GAMBLING, allOpts[210]);
+		GAMBLING = GAMBLING + 100;
+				} else { e[215] = new GameEvent ("waa money is -100 +"+ GAMBLING , allOpts[210]);
+				GAMBLING = GAMBLING - 100;
+				}
+		if(rand.nextInt(1, 100)>= 30) { e[216] = new GameEvent ("yippee money is 1000 + "+ GAMBLING, allOpts[210]);
+		GAMBLING= GAMBLING + 1000;
+				} else { e[216] = new GameEvent ("waa money is -1000 "+ GAMBLING , allOpts[210]);
+				GAMBLING= GAMBLING - 1000;
+				}
+		if(rand.nextInt(1, 100)>= 30) { e[217] = new GameEvent ("yippee money is 10000 + "+ GAMBLING, allOpts[210]);
+		GAMBLING= GAMBLING + 10000;
+				} else { e[217] = new GameEvent ("waa money is -10000 "+ GAMBLING , allOpts[210]);
+				GAMBLING = GAMBLING - 10000;
+				}
+		if(rand.nextInt(1, 100)> 30) { e[218] = new GameEvent ("yippee money is 100000 + " + GAMBLING, allOpts[210]);
+		GAMBLING = GAMBLING+- 100000;
+				} else { e[218] = new GameEvent ("waa money is -100000 "+ GAMBLING, allOpts[210]);
+				GAMBLING= GAMBLING - 100000;
+				}
+		
 		return e;
 	} 
 	
@@ -1293,6 +1384,8 @@ public class TextGame {
 		restCounter = 0;
 		swimToShoreCounter = 0;
 		swimDownCounter = 0;
+        twigCounter = 0;
+        rockCounter = 0;
 	}
 	
 	static public void woe() {
@@ -1726,9 +1819,29 @@ public class TextGame {
 			swimDownCounter = 0;
 			
 		}
+		if (i==208) {
+			rockCounter=rockCounter+5;
+			if (twigCounter>=30 && rockCounter >= 10) {
+				allEvents[208].options= new Option[4];
+				allEvents[208].options[0] = new Option("Look for stones.", 1, 208);
+				allEvents[208].options[1] = new Option("Gather twigs.", 2, 207);
+				allEvents[208].options[2] = new Option("Check for an escape.", 3, 206);
+				allEvents[208].options[3]=new Option("Make a campfire", 4, 209);
+			}
+			
+					}
+		if (i==207) {
+			twigCounter=twigCounter+5;
+			if (twigCounter>=30 && rockCounter >= 10) {
+				allEvents[207].options= new Option[4];
+				allEvents[207].options[0] = new Option("Look for stones.", 1, 208);
+				allEvents[207].options[1] = new Option("Gather twigs.", 2, 207);
+				allEvents[207].options[2] = new Option("Check for an escape.", 3, 206);
+				allEvents[207].options[3]=new Option("Make a campfire", 4, 209);
+			}}
 		
-		
-		
+
+
 		return i;
 		
 	}
