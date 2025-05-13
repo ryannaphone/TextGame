@@ -1317,14 +1317,14 @@ public class TextGame {
 		
 		allOpts[408] = new Option[3];
 		allOpts[408][0] = new Option("Beg for mercy", 1, 409);
-		allOpts[408][1] = new Option("Accept and say nothing", 2, 14);
-		allOpts[408][2] = new Option("Nod and say yup!!! sassily", 3, 14);
+		allOpts[408][1] = new Option("Accept and say nothing", 2, 411);
+		allOpts[408][2] = new Option("Nod and say yup!!! sassily", 3, 411);
 		
 		e[408] = new GameEvent("The alien says: "
 				+ "\n 'YOU COME TO OUR PLACE, AND NEGLECT OUR FOOD???'.", allOpts[408]);
 		
 		allOpts[409] = new Option[2];
-		allOpts[409][0] = new Option("We don't eat berries back home. Our berries are poisonous, not yummy.", 1, 409);
+		allOpts[409][0] = new Option("We don't eat berries back home. Our berries are poisonous, not yummy.", 1, 414);
 		allOpts[409][1] = new Option("Accept and say nothing", 2, 14);
 		allOpts[409][1] = new Option("Say 'See now, why should I tell YOU that?'", 2, 411);
 		
@@ -1333,25 +1333,49 @@ public class TextGame {
 		
 
 		allOpts[410] = new Option[1];
-		allOpts[410][0] = new Option("Eat", 1, 405);
+		allOpts[410][0] = new Option("Eat", 1, 407);
 		
 		e[410] = new GameEvent("The alien says: "
 				+ "\n 'Eat, eat.'", allOpts[410]);
 		
-		allOpts[411] = new Option[1];
-		allOpts[411][0] = new Option("Beg for mercy", 1, 405);
-		//allOpts[411][1] = new Option("Say nothing", 2, 412);
+		allOpts[411] = new Option[3];
+		allOpts[411][0] = new Option("Beg for mercy", 1, 409);
+		allOpts[411][1] = new Option("Say nothing", 2, 412);
+		allOpts[411][2] = new Option("Try to look down", 3, 412);
 		
 		e[411] = new GameEvent("You hear the whirring of something behind you as a tight grip pulls on your hands. "
 				+ "\n What could THAT be?", allOpts[411]);
+
+		allOpts[412] = new Option[3];
+		allOpts[412][0] = new Option("Go to sleep", 1, 413);
+		allOpts[412][1] = new Option("Try to stay awake and do nothing.", 2, 413);
+		allOpts[412][2] = new Option("Try to wrestle the blindfold off", 3, 414);
 		
+		e[412] = new GameEvent("You feel a tremendous weight throw your head to the ground. "
+				+ "\n Your head lands on a pillow???", allOpts[412]);
+
+		allOpts[413] = new Option[1];
+		allOpts[413][0] = new Option("Close your eyes", 1, 170);
 		
+		e[413] = new GameEvent("You feel quite tired. "
+				+ "\n You can't remember the last time you slept", allOpts[413]);
 		
+		allOpts[414] = new Option[1];
+		allOpts[414][0] = new Option("Oh boy.", 1, 415);
 		
+		e[414] = new GameEvent("Before you can get it off, "
+				+ "\n you feel a heavy weight throw you to the ground.", allOpts[414]);
 		
+		allOpts[415] = new Option[1];
+		allOpts[415][0] = new Option("'Sl fsc.'", 1, 416);//M lexi xlmw
 		
+		e[415] = new GameEvent("They inject something into your veins. "
+				+ "\n You hear them say: you're one of us now.", allOpts[415]);
 		
+		allOpts[416] = new Option[1];
+		allOpts[416][0] = new Option("'Sl fsc.'", 1, 416);
 		
+		e[416] = new GameEvent("You have become an alien. 'M EQ er epmir'", allOpts[416]);
 		
 		
 		return e;
@@ -1573,10 +1597,10 @@ public class TextGame {
 			
 		}
 		
-		//if (i == 420) {
-			//gameInProgress = false;
+		if (i == 416) {
+			gameInProgress = false;
 			
-		//}
+		}
 
 		
 		if (i == 101) {
