@@ -553,18 +553,21 @@ public class TextGame {
 				+ "\n ...your science class?", allOpts[60]);
 		
 		allOpts[61] = new Option[4];
-		allOpts[61][0] = new Option("is a bacteria that eats plastic.", 1, 62);
-		allOpts[61][1] = new Option("are the powerhouse of the cell.", 2, 63);
-		allOpts[61][2] = new Option("are an alien race from Star Trek.", 3, 62);
-		allOpts[61][3] = new Option("is a fantasy kingdom.", 4, 62);
+		allOpts[61][0] = new Option("iguana delicatissima"
+				+ "1"
+				+ ""
+				+ "", 1, 62);
+		allOpts[61][1] = new Option("iguana iguana", 2, 63);
+		allOpts[61][2] = new Option("ctenosaura acanthura.", 3, 62);
+		allOpts[61][3] = new Option("amblyrhynchus cristatus", 4, 62);
 		
-		e[61] = new GameEvent("The Mitochondria...", allOpts[61]);
+		e[61] = new GameEvent("The scientific name of the Green iguana is...", allOpts[61]);
 
 		allOpts[62] = new Option[4];
-		allOpts[62][0] = new Option("is a bacteria that eats plastic.", 1, 62);
-		allOpts[62][1] = new Option("are the powerhouse of the cell.", 2, 64);
-		allOpts[62][2] = new Option("are an alien race from Star Trek.", 3, 62);
-		allOpts[62][3] = new Option("is a fantasy kingdom.", 4, 62);
+		allOpts[62][0] = new Option("iguana delicatissima", 1, 62);
+		allOpts[62][1] = new Option("iguana iguana", 2, 64);
+		allOpts[62][2] = new Option("ctenosaura acanthura", 3, 62);
+		allOpts[62][3] = new Option("amblyrhynchus cristatus", 4, 62);
 		
 		e[62] = new GameEvent("Incorrect, please try again.", allOpts[62]);
 
@@ -584,9 +587,10 @@ public class TextGame {
 		allOpts[65] = new Option[3];
 		allOpts[65][0] = new Option("First stall.", 1, 66);
 		allOpts[65][1] = new Option("Second stall.", 2, 67);
-		allOpts[65][2] = new Option("Third stall.", 3, 100);
+		allOpts[65][2] = new Option("Third stall.", 3, 1941
+				);
 		
-		e[65] = new GameEvent("In the ba   throom, there are three stalls before you. Which stall will you choose?", allOpts[65]);
+		e[65] = new GameEvent("In the bathroom, there are three stalls before you. Which stall will you choose?", allOpts[65]);
 		
 		if (randomizer == 0) {
 		
@@ -693,24 +697,21 @@ public class TextGame {
 		e[69] = new GameEvent("You poop.", allOpts[69]);
 		
 		allOpts[70] = new Option[4];
-		allOpts[70][0] = new Option("The Mongols.", 1, 7);
-		allOpts[70][1] = new Option("The Romans.", 2, 71);
+		allOpts[70][0] = new Option("The Mongols.", 1, 193);
+		allOpts[70][1] = new Option("The Romans.", 2, 193);
 		allOpts[70][2] = new Option("The Ottomans.", 3, 192);
-		allOpts[70][3] = new Option("The U.S.A.", 4, 71);
+		allOpts[70][3] = new Option("The U.S.A.", 4, 193);
+				
 		
 		e[70] = new GameEvent("Who conquered Byzantium?", allOpts[70]);
 
 		allOpts[71] = new Option[4];
 		allOpts[71][0] = new Option("The Mongols.", 1, 193);
-		allOpts[71][0] = new Option("The Romans.", 1, 193);
-		allOpts[71][0] = new Option("The Ottomans.", 1, 192);
-		allOpts[71][0] = new Option("The U.S.A.", 1, 193);
+		allOpts[71][1] = new Option("The Romans.", 1, 193);
+		allOpts[71][2] = new Option("The Ottomans.", 1, 192);
+		allOpts[71][3] = new Option("The U.S.A.", 1, 193);
 		
-		e[193] = new GameEvent("'I don't think that's right. Give it another try.'", allOpts[71]);
-	
-		allOpts[192] = new Option[1];
-		e[192] = new GameEvent("'Great you got that right.'", allOpts[192]);
-		allOpts[192][0] = new Option("leave class.", 1, 120);
+		
 		
 		allOpts[72] = new Option[2];
 		allOpts[72][0] = new Option("Kowtow.", 1, 76);
@@ -1207,6 +1208,16 @@ public class TextGame {
 		e[181] = new GameEvent("You ask to help, someone points at a spoon and a pot:"
 				+ "\n 'weeyaakahaakani ayoolo, waaphkilookia.'", allOpts[181]);
 		
+		e[194] = new GameEvent("it is your geography class."+ "what is the capital"
+				+ " of Papua New Guinea.", allOpts[195]);
+		
+		
+		e[196] = new GameEvent("I don't think that is right ."+ "try again.",
+				allOpts[195]);
+		
+		e[196] = new GameEvent("that is correct."+ "class is dissmissed.",
+				allOpts[172]);
+		
 		allOpts[182] = new Option[2];
 		allOpts[182][0] = new Option("Run away.", 1, 185);
 		allOpts[182][1] = new Option("Laugh along.", 2, 184);
@@ -1273,7 +1284,22 @@ public class TextGame {
 		e[191] = new GameEvent("'Fpoken like a trve Frenchman!' "
 				+ "\n 'Clap him in ironf.'", allOpts[191]);
 		
+		allOpts[192] = new Option[1];
+		e[192] = new GameEvent("'Great you got that right.'", allOpts[192]);
+		allOpts[192][0] = new Option("leave class.", 1, 120);
+		
+		e[193] = new GameEvent("'I don't think that's right. Give it another try.'", allOpts[193]);
+		
+		allOpts[195] = new Option[4];
+		allOpts[195][0] = new Option("Dili.", 1, 196);
+		allOpts[195][1] = new Option("Accra.", 1, 196);
+		allOpts[195][2] = new Option("Port Moresby.", 1, 197);
+		allOpts[195][3] = new Option("San José.", 1, 196);
+		
+		
 		return e;
+		
+		
 	} 
 	
 	static public void fullReset() {
