@@ -1014,6 +1014,85 @@ public class TextGame {
 		e[603] = new GameEvent("'Your vision turns black,"
 				+"\n you have entered the shadows.'", allOpts[603]);
 		
+		allOpts[604] = new Option[1];
+		allOpts[604][0] = new Option("'Look around.'", 1, 605);
+		
+		e[604] = new GameEvent("'You find yourself floating in a endless black void.'", allOpts[604]);
+		
+		allOpts[605] = new Option[2];
+		allOpts[605][0] = new Option("'Head towards the colosseum.'", 1, 606);
+		allOpts[605][1] = new Option("'Look around.'", 2, 605);
+		
+		e[605] = new GameEvent("'There is a colosseum in the distance.'", allOpts[605]);
+		
+		allOpts[606] = new Option[2];
+		allOpts[606][0] = new Option("'Enter the colosseum.'", 1, 607);
+		allOpts[606][1] = new Option("'How did I get here?'", 2, 11);
+		
+		e[606] = new GameEvent("'The world shakes, and then you suddenly find yourself at the entrance of the colosseum'", allOpts[606]);
+		
+		allOpts[607] = new Option[2];
+		allOpts[607][0] = new Option("'Ride the centaur.'", 1, 608);
+		allOpts[607][1] = new Option("'Run.'", 2, 11);
+		
+		e[607] = new GameEvent("'You enter the colosseum."
+				+ "\n Upon entering, you a cage on the other side of the colosseum."
+				+ "\n It opens as you walk in, revealing a centaur."
+				+ "\n But this one does not look like any centaur that you have ever heard of."
+				+ "\n It has a mane of stark white fur and a long black horn."
+				+ "\n As you watch in amazement, it summons several bolts of lightning, one of which strikes a pile of humanoid bones."
+				+ "\n The pile of bones rises up, pieces itself together, and forms a giant-sized creature with a single, rotting eye.'", allOpts[607]);
+		
+		allOpts[608] = new Option[1];
+		allOpts[608][0] = new Option("' Get off its back.'", 1, 609);
+		
+		e[608] = new GameEvent("'You hop on its back."
+				+ "\n The centaur reveales that it is called a silver lynel and that the walking pile of bones is called a hinox."
+				+ "\n As soon as you hop on the lynel's back, a roar suddenly comes from its mouth."
+				+ "\n The force of the roar shatters the hinox.'", allOpts[608]);
+		
+		allOpts[609] = new Option[2];
+		allOpts[609][0] = new Option("'Impossible.'", 1, 11);
+		allOpts[609][1] = new Option("'How?'", 2, 610);
+		
+		e[609] = new GameEvent("'Once you get off, the lynel tells you that the world that you live in is a simulation.'", allOpts[609]);
+		
+		allOpts[610] = new Option[2];
+		allOpts[610][0] = new Option("'Begone!'", 1, 11);
+		allOpts[610][1] = new Option("'Take me there.'", 2, 611);
+		
+		e[610] = new GameEvent("'It says that there are other realms and that you can find the answer there, for he does not know it."
+				+ "\n He also says that he can take you there but only if you want to go, for most are not ready for the truth.'", allOpts[610]);
+		
+		allOpts[611] = new Option[1];
+		allOpts[611][0] = new Option("'Aaah!'", 1, 612);
+		
+		e[611] = new GameEvent("'The lynel summons a deep purple vortex."
+				+ "\n He says that it is the portal to the other world."
+				+ "\n It seems to be made up of dark energy."
+				+ "\n It draws you in.'", allOpts[611]);
+		
+		allOpts[612] = new Option[1];
+		allOpts[612][0] = new Option("'Who are you?'", 1, 613);
+		
+		e[612] = new GameEvent("'When you wake up, you see a man in strange clothes standing above you.'", allOpts[612]);
+		
+		allOpts[613] = new Option[1];
+		allOpts[613][0] = new Option("'Teach me magic.'", 1, 614);
+		
+		e[613] = new GameEvent("'The stranger says that his name is Arlent, and that you are in the city of Sekun where he is the strongest mage.'", allOpts[613]);
+		
+		allOpts[614] = new Option[1];
+		allOpts[614][0] = new Option("'Head to his tower via the portal left behind from his teleportation.'", 1, 615);
+		
+		e[614] = new GameEvent("'I will teach you, but first you must come to my tower, he says as he teleports away.'", allOpts[614]);
+		
+		allOpts[615] = new Option[2];
+		allOpts[615][0] = new Option("'Look for Arlent.'", 1, 616);
+		allOpts[615][1] = new Option("'Start reading the books.'", 2, 615);
+		
+		e[615] = new GameEvent("'You head through the portal and appear in a library filled with books, but you do not see Arlent anywhere.'", allOpts[615]);
+		
 		allOpts[140] = new Option[3];
 		allOpts[140][0] = new Option("Smack a tree.", 1, 141);
 		allOpts[140][1] = new Option("Smack the ground.", 2, 142);
