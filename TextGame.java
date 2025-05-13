@@ -704,7 +704,7 @@ public class TextGame {
 				
 		
 		e[70] = new GameEvent("Who conquered Byzantium?", allOpts[70]);
-
+		
 		allOpts[71] = new Option[4];
 		allOpts[71][0] = new Option("The Mongols.", 1, 193);
 		allOpts[71][1] = new Option("The Romans.", 1, 193);
@@ -1288,7 +1288,9 @@ public class TextGame {
 		e[192] = new GameEvent("'Great you got that right.'", allOpts[192]);
 		allOpts[192][0] = new Option("leave class.", 1, 120);
 		
+		allOpts[193] = new Option[1];
 		e[193] = new GameEvent("'I don't think that's right. Give it another try.'", allOpts[193]);
+		allOpts[193][0] = new Option("Try again.", 1, 70);
 		
 		allOpts[195] = new Option[4];
 		allOpts[195][0] = new Option("Dili.", 1, 196);
