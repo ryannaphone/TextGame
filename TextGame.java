@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class TextGame {
 	
 	// declare variables
-	static int totalEvents = 899;
+	static int totalEvents = 900;
 	static Random rand = new Random();
 	static int randomizer = rand.nextInt(10);
 	
@@ -51,6 +51,7 @@ public class TextGame {
 	static int chainedCounter = 0;
 	static int spaceDistance = 0;
 	static int mindBlast=0;
+	static int charcoalizer=0;
 
 	static int spaceSpeed = 100;
 	
@@ -1273,19 +1274,121 @@ public class TextGame {
 		e[191] = new GameEvent("'Fpoken like a trve Frenchman!' "
 				+ "\n 'Clap him in ironf.'", allOpts[191]);
 		
-		e[801] = new GameEvent("The water boils on your skin, yet you feel no pain."
-				+ "\n Your sheer fury propells you down like a torpedo to a cave in the water.", allOpts[801]);
 		
-		e[802] = new GameEvent("You realize that you are hurdling towards the sun, and no amount of desperation seems to be helping.", allOpts[802]);
 		allOpts[802] = new Option[1];
-		allOpts[802][0] = new Option("Accept the touch of fire.", 1, 11);
+		allOpts[802][0] = new Option("Face the sun, strike it down.", 1, 803);
+		
+		e[802]=new GameEvent("You point your feet down at the sun, ready to dropkick it."
+				+ "\n The heat is intense, yet your rage burns brighter.", allOpts[802]);
+		
+		
+		allOpts[803] = new Option [3];
+		allOpts[803][0]=new Option ("Go left!",1,804);
+		allOpts[803][1]=new Option ("Go straight.",2,807);
+		allOpts[803][2]=new Option ("Go right?",3,806);
 		
 		e[803] = new GameEvent("You dive into the sun, foot first as though you were trying to dropkick it."
 				+ "\n Instead of incinerating, you burst through the surface and onto a cold desert, the skies above are starry and the sand is bright orange.", allOpts[803]);
-		allOpts[803] = new Option [3];
-		allOpts[803][0]=new Option ("Go left.",1,100);
-		allOpts[803][0]=new Option ("Go straight.",2,100);
-		allOpts[803][0]=new Option ("Go right.",3,100);
+		
+		allOpts[804] = new Option [3];
+		allOpts[804][0]=new Option ("Go left.",1,805);
+		allOpts[804][1]=new Option ("Go straight.",2,804);
+		allOpts[804][2]=new Option ("Go right.",3,806);
+		
+		e[806] = new GameEvent("You walk straight ahead, you see a few hyper-accurate charcoal statues."
+				+ "\n The air is both searing and freezing at the same time, your joints feel stiff.", allOpts[804]);
+		
+		
+		allOpts[805] = new Option [3];
+		allOpts[805][0]=new Option ("Go left.",1,805);
+		allOpts[805][1]=new Option ("Go straight.",2,804);
+		allOpts[805][2]=new Option ("Go right.",3,806);
+		
+		e[805] = new GameEvent("You walk left, you see a few hyper-accurate charcoal statues."
+				+ "\n The air is both searing and freezing at the same time, your joints feel stiff.", allOpts[805]);
+		
+		allOpts[806] = new Option [3];
+		allOpts[806][0]=new Option ("Go left.",1,805);
+		allOpts[806][1]=new Option ("Go straight.",2,804);
+		allOpts[806][2]=new Option ("Go right.",3,806);
+		
+		e[806] = new GameEvent("You walk right, you see a few hyper-accurate charcoal statues."
+				+ "\n The air is both searing and freezing at the same time, your joints feel stiff.", allOpts[806]);
+		
+		
+		
+		allOpts[807] = new Option [3];
+		allOpts[807][0]=new Option ("Go left...",1,805);
+		allOpts[807][1]=new Option ("Go straight!",2,811);
+		allOpts[807][2]=new Option ("Go right.",3,808);
+		
+		e[807] = new GameEvent("You walk straight ahead, you only see the orange sand and starry night."
+				+ "\n The air is both searing and freezing at the same time.", allOpts[807]);
+		
+		
+		allOpts[808] = new Option [3];
+		allOpts[808][0]=new Option ("Go left.",1,809);
+		allOpts[808][1]=new Option ("Go straight??",2,811);
+		allOpts[808][2]=new Option ("Go right~",3,806);
+		
+		e[808] = new GameEvent("You walk straight ahead, you only see the orange sand and starry night."
+				+ "\n The air is both searing and freezing at the same time.", allOpts[808]);
+		
+		allOpts[809] = new Option [3];
+		allOpts[809][0]=new Option ("Go left.",1,810);
+		allOpts[809][1]=new Option ("Go straight.",2,811);
+		allOpts[809][2]=new Option ("Go right.",3,806);
+		
+		e[809] = new GameEvent("You walk left, you only see the orange sand and starry night."
+				+ "\n The air is both searing and freezing at the same time.", allOpts[809]);
+		
+		allOpts[810] = new Option [3];
+		allOpts[810][0]=new Option ("Go left.",1,804);
+		allOpts[810][1]=new Option ("Go straight.",2,811);
+		allOpts[810][2]=new Option ("Go right.",3,806);
+		
+		e[810] = new GameEvent("You walk left, you only see the orange sand and starry night."
+				+ "\n The air is both searing and freezing at the same time.", allOpts[810]);
+		
+		
+		allOpts[811] = new Option [3];
+		allOpts[811][0]=new Option (" 'Hello there.' ",1,812);
+		allOpts[811][1]=new Option (" 'Who are you?' ",2,813);
+		allOpts[811][2]=new Option (" 'I've never seen you in the books before.",3,814);
+		
+		e[811] = new GameEvent("You see a crimson red humanoid automaton, its head is a star and it wields a staff with a flame at the tip."
+				+"\n The automaton turns to you, its lanky limbs creak slightly as it moves.", allOpts[811]);
+		
+		allOpts[812] = new Option [1];
+		allOpts[812][0]=new Option (" 'I dropkicked the sun.' ",1,815);
+		
+		e[812] = new GameEvent("It speaks, somehow."
+				+"\n 'I don't get visitors, how'd ya get here?", allOpts[812]);
+		
+		allOpts[813] = new Option [1];
+		allOpts[813][0]=new Option (" 'Works well enough.' ",1,815);
+		
+		e[813] = new GameEvent("It speaks, somehow."
+				+"\n 'I've got a serial designation, 157341. I don't have a name though.", allOpts[813]);
+		
+		allOpts[814] = new Option [1];
+		allOpts[814][0]=new Option (" 'That explains it.' ",1,815);
+		
+		e[814] = new GameEvent("It speaks, somehow."
+				+"\n 'The deep one rules earth, and this star isn't quite habitable.' ", allOpts[814]);
+		
+		
+		allOpts[815] = new Option [1];
+		allOpts[815][0]=new Option ("Bwuh.",1,100);
+		
+		e[815] = new GameEvent("Bwuh."
+				+"\n 'Bwuh.", allOpts[815]);
+		
+		allOpts[899] = new Option [1];
+		allOpts[899][0]=new Option ("Accept nihil.",1,11);
+		
+		e[899] = new GameEvent("Your body starts rapidly turning to charcoal."
+				+"\n Your form is forever preserved in this barren world.", allOpts[899]);
 		
 		return e;
 	} 
@@ -1315,6 +1418,7 @@ public class TextGame {
 		swimToShoreCounter = 0;
 		swimDownCounter = 0;
 		mindBlast=0;
+		charcoalizer=0;
 	}
 	
 	static public void woe() {
@@ -1348,7 +1452,8 @@ public class TextGame {
 		allEvents[32].options[1] = new Option("RAGE", 2, 34);
 		
 		allEvents[92].options[0] = new Option("Take your seat.", 1, 70);
-		allEvents[802].options[1] = new Option("Face the star.", 2, 803);
+		
+		allEvents[163].options[0] = new Option("Take a look at the odd heat behind you.", 1, 802);
 	}
 	
 	static public void pride() {
@@ -1364,7 +1469,7 @@ public class TextGame {
 		malice = false;
 		peace = true;
 	}
-	
+		
 	public static int checkReroutes(int i) {
 		
 		if (i == 173) {
@@ -1418,15 +1523,77 @@ public class TextGame {
 				allEvents[162].options[1] = new Option("Just float.", 2, 163);
 				
 				allEvents[162] = new GameEvent("You flail your arms, trying to slow down.", allEvents[162].options);
+			
+			}
+			
+			
+
+		}
+		
+		if (i == 162) {
+			spaceSpeed = spaceSpeed - 1;
+			spaceDistance = spaceDistance + spaceSpeed;
+			
+			if (spaceDistance > 2500) {
+				allEvents[161].options = new Option[2];
+				allEvents[161].options[0] = new Option("Keep floating.", 1, 163);
+				allEvents[161].options[1] = new Option("Try to slow down.", 2, 163);
+				
+				allEvents[161] = new GameEvent("You are flying through empty space.", allEvents[161].options);
+				
+				allEvents[162].options = new Option[2];
+				allEvents[162].options[0] = new Option("Keep flailing your arms.", 1, 163);
+				allEvents[162].options[1] = new Option("Just float.", 2, 163);
+				
+				allEvents[162] = new GameEvent("You flail your arms, trying to slow down.", allEvents[162].options);
 
 			}
+		}
 		
-		if (spaceSpeed > 5000) {
-			i = 802;
+		if (i == 804) {
+			charcoalizer += 1;
+			
+			allEvents[806].options = new Option [3];
+			allEvents[806].options[0]=new Option ("Go left.",1,805);
+			allEvents[806].options[1]=new Option ("Go straight.",2,804);
+			allEvents[806].options[2]=new Option ("Go right.",3,806);
+			
+			if (charcoalizer > 5) {
+				allEvents[804].options=new Option[1];
+				allEvents[804].options[0]=new Option("Try to move...",1,899);
+			
+			}
 		}
-
-
+		if (i == 805) {
+			charcoalizer += 1;
+			
+			allEvents[806].options = new Option [3];
+			allEvents[806].options[0]=new Option ("Go left.",1,805);
+			allEvents[806].options[1]=new Option ("Go straight.",2,804);
+			allEvents[806].options[2]=new Option ("Go right.",3,806);	
+			
+			if (charcoalizer > 5) {
+				allEvents[805].options=new Option[1];
+				allEvents[805].options[0]=new Option("Try to move...",1,899);
+			
+			}
 		}
+		if (i == 806) {
+			charcoalizer += 1;
+			
+			allEvents[806].options = new Option [3];
+			allEvents[806].options[0]=new Option ("Go left.",1,805);
+			allEvents[806].options[1]=new Option ("Go straight.",2,804);
+			allEvents[806].options[2]=new Option ("Go right.",3,806);
+			
+			if (charcoalizer > 5) {
+				allEvents[806].options=new Option[1];
+				allEvents[806].options[0]=new Option("Try to move...",1,899);
+			
+			}
+		}
+		
+		
 		
 		if (i == 154) {
 			contemplationComplete = false;
@@ -1727,6 +1894,7 @@ public class TextGame {
 			restCounter = 0;
 			swimToShoreCounter = 0;
 			swimDownCounter = 0;
+			charcoalizer=0;
 			
 			if (restUnlocked)restCounter++;
 			
