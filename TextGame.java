@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class TextGame {
 	
 	// declare variables
-	static int totalEvents = 201;
+	static int totalEvents = 2001;
 	static Random rand = new Random();
 	static int randomizer = rand.nextInt(10);
 	
@@ -19,9 +19,12 @@ public class TextGame {
 	
 	static boolean endedABranch = false;
 	static boolean contemplationComplete = false;
+	
 	static boolean foundCarPortal = false;
 	static boolean foundYellowDoor = false;
 	static boolean foundCavePortal = false;
+	
+	static boolean tutorialComplete = false;
 	static boolean restUnlocked = false;
 	static boolean thirdEyeOpen = false;
 	static boolean metAnthony = false;
@@ -33,6 +36,7 @@ public class TextGame {
 	static boolean woe = false;
 	static boolean peace = false;
 	
+	static int wrongMathCounter = 0;
 	static int noIDontCounter = 0;
 	static int triedToBeRockCounter = 0;
 	static int isARockCounter = 0;
@@ -44,6 +48,7 @@ public class TextGame {
 	static int mineTreeCounter = 0;
 	static int mineGroundCounter = 0;
 	static int chainedCounter = 0;
+	
 	static int spaceDistance = 0;
 
 	static int spaceSpeed = 100;
@@ -144,7 +149,7 @@ public class TextGame {
 					+ "\n 20 - 6 + 4k = 2 - 2k "
 					+ "\n What is the answer?", allOpts[2]);
 			
-			
+
 			
 		}
 		
@@ -490,7 +495,7 @@ public class TextGame {
 		allOpts[49] = new Option[1];
 		allOpts[49][0] = new Option("Ouch.", 1, 11);
 		
-		e[49] = new GameEvent("CRASH.");
+		e[49] = new GameEvent("CRASH.", allOpts[49]);
 		
 		allOpts[50] = new Option[4];
 		allOpts[50][0] = new Option("Woe and despair.", 1, 54);
@@ -1066,7 +1071,7 @@ public class TextGame {
 
 		allOpts[152] = new Option[2];
 		allOpts[152][0] = new Option("'Reroll my fate.'", 1, 153);
-		allOpts[152][1] = new Option("'I am happy with this fate.", 2, 154);
+		allOpts[152][1] = new Option("'I am happy with this fate.'", 2, 154);
 		
 		e[152] = new GameEvent("Your fate has not yet been decided.", allOpts[152]);
 
@@ -1267,6 +1272,48 @@ public class TextGame {
 		e[191] = new GameEvent("'Fpoken like a trve Frenchman!' "
 				+ "\n 'Clap him in ironf.'", allOpts[191]);
 		
+		
+		allOpts[200] = new Option[2];
+		allOpts[200][0] = new Option("'... I just forgot.'", 1, 8);
+		allOpts[200][1] = new Option("'I'm new here.'", 2, 201);
+		
+		e[200] = new GameEvent("'They didn't tell you?'", allOpts[200]);
+		
+		allOpts[201] = new Option[1];
+		allOpts[201][0] = new Option("Take the tutorial.", 1, 202);
+		
+		e[201] = new GameEvent("'Oh! Do you want a tutorial then?'", allOpts[201]);
+		
+		allOpts[202] = new Option[2];
+		allOpts[202][0] = new Option("'Wait what?!'", 1, 11);
+		allOpts[202][1] = new Option("Shut down.", 2, 11);
+		
+		e[202] = new GameEvent("'Sounds good!"
+				+ "\n Shutting down now...", allOpts[202]);
+		
+		allOpts[203] = new Option[1];
+		allOpts[203][0] = new Option("Wait patiently.", 1, 100);
+		
+		e[203] = new GameEvent("A collection of light blue orbs spin in a circle for a few moments.", allOpts[203]);
+		
+		allOpts[204] = new Option[2];
+		allOpts[204][0] = new Option("Try clicking on something.", 1, 205);
+		allOpts[204][1] = new Option("Ctrl + alt + delete.", 2, 100);
+		
+		e[204] = new GameEvent("After a happy little jingle plays, "
+				+ "\n you see a landscape--rolling green hills,"
+				+ "\n blue sky and sparse fluffy clouds.", allOpts[204]);
+		
+		allOpts[205] = new Option[3];
+		allOpts[205][0] = new Option("'...Hello?'", 1, 100);
+		allOpts[205][1] = new Option("'Clippy!!!'", 2, 100);
+		allOpts[205][2] = new Option("'Oh jeez... not this guy!", 3, 100);
+		
+		
+		e[205] = new GameEvent("A smug little paper clip appears before you. "
+				+ "\n 'It looks like you're trying to figure out what is going on. "
+				+ "\n Would you like help?'", allOpts[205]);
+		
 		return e;
 	} 
 	
@@ -1286,11 +1333,12 @@ public class TextGame {
 	}
 	
 	static public void resetCounters() {
+		wrongMathCounter = 0;
 		noIDontCounter = 0;
 		triedToBeRockCounter = 0;
 		isARockCounter = 0;
 		caveDiverCounter = 0;
-		restCounter = 0;
+		if (!restUnlocked) restCounter = 0;
 		swimToShoreCounter = 0;
 		swimDownCounter = 0;
 	}
@@ -1330,6 +1378,9 @@ public class TextGame {
 		pride = true;
 		woe = false;
 		malice = false;
+		
+		allEvents[5].options = new Option[2];
+		allEvents[5].options[0] = new Option("'You're wrong, I had the right answer.'", 1, 100);
 	}
 	
 	static public void peace() {
@@ -1339,7 +1390,25 @@ public class TextGame {
 		peace = true;
 	}
 	
+	public static Option[] appendOption(Option[] opts, Option newOpt) {
+		//Option[] transfer = new Option[opts.length];
+		Option[] appended = new Option[opts.length + 1];
+		boolean duplicateFound = false;
+		for (int i = 0; i < opts.length; i++) {
+			appended[i] = opts[i];
+			if (opts[i].optName.equals(newOpt.optName)) duplicateFound = true;
+		}
+		appended[appended.length - 1] = newOpt;
+		
+		if (!duplicateFound) return appended;
+		return opts;
+	}
+	
 	public static int checkReroutes(int i) {
+		
+		if (i == 202) {
+			allEvents[11].options = appendOption(allEvents[11].options, new Option("Press delete a bunch of times.", allEvents[11].options.length + 1, 203));
+		}
 		
 		if (i == 173) {
 			callForHelpCounter++;
@@ -1684,13 +1753,7 @@ public class TextGame {
 		
 		if (i == 11) {
 			resetCounters();
-			noIDontCounter = 0;
-			triedToBeRockCounter = 0;
-			isARockCounter = 0;
-			caveDiverCounter = 0;
-			//restCounter = 0;
-			swimToShoreCounter = 0;
-			swimDownCounter = 0;
+			
 			
 			if (restUnlocked)restCounter++;
 			
@@ -1709,6 +1772,14 @@ public class TextGame {
 				//restCounter = 0;
 			}
 			
+		}
+		
+		if (i == 4) {
+			wrongMathCounter++;
+			
+			if (wrongMathCounter > 3) {
+				allEvents[4].options = appendOption(allEvents[4].options, new Option("'How does this game work?'", allEvents[4].options.length + 1, 200));
+			}
 		}
 		
 		if (i == 1) {
